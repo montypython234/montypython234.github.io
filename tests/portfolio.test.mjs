@@ -91,6 +91,14 @@ test('public copy excludes private contact details and unsupported claims', () =
   assert.match(source, /not commissioned/);
 });
 
+test('hero highlights use verified, evidence-backed achievements', () => {
+  assert.deepEqual(data.hero.proof, [
+    { value: 'Distinction', label: 'MSc International Marketing' },
+    { value: '796.5K views', label: 'Two featured Anzara TikToks' },
+    { value: '87%', label: 'Social Media Marketing and Digital PR' },
+  ]);
+});
+
 test('external destinations are HTTPS, email or local anchors', () => {
   const links = [...html.matchAll(/href="([^"]+)"/g)].map(match => decode(match[1]));
   for (const link of links) {
