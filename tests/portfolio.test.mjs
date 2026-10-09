@@ -60,6 +60,12 @@ test('Anzara previews use product-detail assets without changing the source vide
   assert.doesNotMatch(html, /assets\/images\/anzara-(?:saree|gharara)\.webp/);
 });
 
+test('Nasima project card uses the real childcare setting without duplicating case-study media', () => {
+  const project = data.projects.find(item => item.id === 'nasimas');
+  assert.equal(project.thumbnail, 'assets/images/nasimas-brand-card.webp');
+  assert.ok(project.media.every(item => item.src !== project.thumbnail));
+});
+
 test('canonical URLs and the Pages CNAME agree', async () => {
   const cname = (await readFile(path.join(root, 'CNAME'), 'utf8')).trim();
   assert.equal(new URL(data.siteUrl).hostname, cname);
