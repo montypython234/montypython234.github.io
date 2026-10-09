@@ -46,7 +46,7 @@ test('PDF page numbering follows the number of selected projects', () => {
 
 test('Anzara previews use product-detail assets without changing the source videos', () => {
   const project = data.projects.find(item => item.id === 'anzara');
-  assert.equal(project.thumbnail, 'assets/images/anzara-gharara-detail.webp');
+  assert.equal(project.thumbnail, 'assets/images/anzara-brand-card.webp');
   assert.deepEqual(project.media.map(item => item.src), [
     'assets/images/anzara-saree-detail.webp',
     'assets/images/anzara-gharara-detail.webp',
