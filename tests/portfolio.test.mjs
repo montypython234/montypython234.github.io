@@ -64,6 +64,11 @@ test('Nasima project card uses the real childcare setting without duplicating ca
   const project = data.projects.find(item => item.id === 'nasimas');
   assert.equal(project.thumbnail, 'assets/images/nasimas-brand-card.webp');
   assert.ok(project.media.every(item => item.src !== project.thumbnail));
+  assert.equal(project.media[1].src, 'assets/images/nasimas-paid-results.webp');
+  assert.match(project.note.text, /5\.7K paid views/);
+  assert.match(project.note.text, /under GBP 40 total spend/);
+  assert.match(project.note.text, /1\.7K impressions and 55 clicks/);
+  assert.match(project.note.text, /audience overlap/);
 });
 
 test('canonical URLs and the Pages CNAME agree', async () => {
@@ -95,7 +100,7 @@ test('hero highlights use verified, evidence-backed achievements', () => {
   assert.deepEqual(data.hero.proof, [
     { value: 'Distinction', label: 'MSc International Marketing' },
     { value: '796.5K views', label: 'Two featured Anzara TikToks' },
-    { value: '87%', label: 'Social Media Marketing and Digital PR' },
+    { value: '5.7K paid views', label: 'Three Nasima Facebook campaigns' },
   ]);
 });
 

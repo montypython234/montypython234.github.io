@@ -26,8 +26,8 @@
         "label": "Two featured Anzara TikToks"
       },
       {
-        "value": "87%",
-        "label": "Social Media Marketing and Digital PR"
+        "value": "5.7K paid views",
+        "label": "Three Nasima Facebook campaigns"
       }
     ]
   },
@@ -46,7 +46,7 @@
       "status": "Marketing internship",
       "period": "April 2025 - April 2026",
       "sector": "Local services / childcare",
-      "summary": "Supporting a local childcare business with parent-friendly social content, Meta advertising and practical website updates.",
+      "summary": "Supporting a local childcare business with parent-friendly content, practical website updates and three Facebook campaigns that delivered 5.7K paid views.",
       "thumbnail": "assets/images/nasimas-brand-card.webp",
       "thumbnailAlt": "Nasima's Childcare playroom, showing its welcoming real-world setting in Enfield.",
       "layout": "landscape",
@@ -59,11 +59,12 @@
           "caption": "Selected live website excerpts: useful information and a view of the play environment."
         },
         {
-          "src": "assets/images/nasimas-brand.webp",
-          "width": 520,
-          "height": 519,
-          "alt": "Nasima's Childcare social identity with a colourful tree and a play-and-grow message.",
-          "caption": "The business's social identity, included as project context."
+          "src": "assets/images/nasimas-paid-results.webp",
+          "width": 1400,
+          "height": 1100,
+          "alt": "Paid social results showing 5.7K views, 3.4K combined campaign reach and GBP 38.63 total spend across three Facebook campaigns.",
+          "caption": "Meta Ad Centre results: three completed campaigns created by Meharin, October 2025 to February 2026.",
+          "metric": "5.7K paid views"
         }
       ],
       "sections": [
@@ -81,12 +82,12 @@
         },
         {
           "heading": "What this shows",
-          "text": "Practical marketing support across more than one channel: adapting a message for social, keeping information current and paying attention to the detail that helps a parent take the next step."
+          "text": "Practical marketing support across channels: adapting messages for social, delivering targeted campaigns on modest budgets and keeping useful website information current."
         }
       ],
       "note": {
-        "label": "A useful lesson",
-        "text": "Clarity is part of the creative work. For a service like childcare, helpful information and a reassuring tone matter as much as an attractive post."
+        "label": "Results in context",
+        "text": "Three completed Facebook campaigns created by Meharin delivered 5.7K paid views and 3.4K combined reported reach on under GBP 40 total spend. Google Search Console also recorded 1.7K impressions and 55 clicks between 8 June 2025 and 30 April 2026. Meta reports reach per campaign, so the combined figure may include audience overlap."
       },
       "tools": ["Canva", "Meta Ads Manager", "HTML content", "GitHub"],
       "links": [
