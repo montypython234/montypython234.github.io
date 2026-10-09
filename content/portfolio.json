@@ -1,7 +1,7 @@
 {
   "name": "Meharin Onty",
   "brand": "The Meharin Edit",
-  "siteUrl": "https://montypython234.github.io",
+  "siteUrl": "https://meharinonty.co.uk",
   "email": "meharin.onty@gmail.com",
   "linkedin": "https://www.linkedin.com/in/meharin-onty-a744821b3/",
   "pdf": "downloads/meharin-onty-marketing-portfolio.pdf",
@@ -110,26 +110,26 @@
       "period": "January 2022 - December 2023",
       "sector": "Fashion / social media",
       "summary": "Fashion content and live presenting for a clothing brand, with work across TikTok, Instagram, Facebook and YouTube.",
-      "thumbnail": "assets/images/anzara-gharara.webp",
-      "thumbnailAlt": "A still from an Anzara collection video featuring an embroidered gharara outfit.",
+      "thumbnail": "assets/images/anzara-gharara-detail.webp",
+      "thumbnailAlt": "A face-free crop showing the embroidery and blue fabric in Anzara's gharara collection video.",
       "layout": "portrait-pair",
       "media": [
         {
-          "src": "assets/images/anzara-saree.webp",
-          "width": 497,
-          "height": 882,
-          "alt": "Anzara ready-saree content showing fabric and embroidery in a lavender outfit.",
-          "caption": "Ready-saree collection / TikTok / March 2023",
+          "src": "assets/images/anzara-saree-detail.webp",
+          "width": 447,
+          "height": 390,
+          "alt": "A face-free detail of the floral embroidery and draped fabric in Anzara's ready-saree video.",
+          "caption": "Garment detail / Ready-saree collection / TikTok / March 2023",
           "metric": "542.6K views",
           "url": "https://www.tiktok.com/@anzara.official/video/7211155694119111937",
           "linkLabel": "Watch the saree video"
         },
         {
-          "src": "assets/images/anzara-gharara.webp",
-          "width": 497,
-          "height": 882,
-          "alt": "Anzara collection content featuring an embellished gharara outfit.",
-          "caption": "Gharara collection / TikTok / April 2023",
+          "src": "assets/images/anzara-gharara-detail.webp",
+          "width": 393,
+          "height": 473,
+          "alt": "A face-free detail of an embellished gharara outfit and flowing blue fabric from Anzara's collection video.",
+          "caption": "Garment detail / Gharara collection / TikTok / April 2023",
           "metric": "253.9K views",
           "url": "https://www.tiktok.com/@anzara.official/video/7220067355550846210",
           "linkLabel": "Watch the gharara video"
@@ -275,7 +275,7 @@
           "height": 316,
           "alt": "Front of the academic brochure, combining panda illustrations, environmental messaging and a 'Join us in taking action' headline.",
           "caption": "Brochure front: a campaign hook, a brand message and an invitation to act.",
-          "url": "https://montypython234.github.io/assets/images/cheeky-panda-front.webp",
+          "url": "https://meharinonty.co.uk/assets/images/cheeky-panda-front.webp",
           "linkLabel": "View the front artwork"
         },
         {
@@ -284,7 +284,7 @@
           "height": 326,
           "alt": "Reverse of the academic brochure, organised into 'Why does it matter?', 'What you can do' and 'What we're doing' panels.",
           "caption": "Brochure reverse: three clear message sections, cropped for the portfolio.",
-          "url": "https://montypython234.github.io/assets/images/cheeky-panda-reverse.webp",
+          "url": "https://meharinonty.co.uk/assets/images/cheeky-panda-reverse.webp",
           "linkLabel": "View the reverse artwork"
         }
       ],

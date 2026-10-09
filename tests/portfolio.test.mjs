@@ -44,6 +44,29 @@ test('PDF page numbering follows the number of selected projects', () => {
   });
 });
 
+test('Anzara previews use product-detail assets without changing the source videos', () => {
+  const project = data.projects.find(item => item.id === 'anzara');
+  assert.equal(project.thumbnail, 'assets/images/anzara-gharara-detail.webp');
+  assert.deepEqual(project.media.map(item => item.src), [
+    'assets/images/anzara-saree-detail.webp',
+    'assets/images/anzara-gharara-detail.webp',
+  ]);
+  assert.deepEqual(project.media.map(item => item.url), [
+    'https://www.tiktok.com/@anzara.official/video/7211155694119111937',
+    'https://www.tiktok.com/@anzara.official/video/7220067355550846210',
+  ]);
+  assert.equal(data.hero.portrait, 'assets/images/meharin-portrait.webp');
+  assert.doesNotMatch(html, /assets\/images\/anzara-(?:saree|gharara)\.webp/);
+});
+
+test('canonical URLs and the Pages CNAME agree', async () => {
+  const cname = (await readFile(path.join(root, 'CNAME'), 'utf8')).trim();
+  assert.equal(new URL(data.siteUrl).hostname, cname);
+  assert.ok(html.includes(`<link rel="canonical" href="${data.siteUrl}/">`));
+  const project = data.projects.find(item => item.id === 'cheeky-panda');
+  for (const image of project.media) assert.equal(new URL(image.url).origin, data.siteUrl);
+});
+
 test('substantive portfolio content is present in the generated document', () => {
   const plain = decode(html.replace(/<br>/g, '\n').replace(/<[^>]+>/g, ' '));
   const relevant = [data.hero.intro, data.hero.availability, data.about.body, data.about.contactText];
