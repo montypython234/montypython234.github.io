@@ -55,6 +55,7 @@ test('Anzara previews use product-detail assets without changing the source vide
     'https://www.tiktok.com/@anzara.official/video/7211155694119111937',
     'https://www.tiktok.com/@anzara.official/video/7220067355550846210',
   ]);
+  assert.ok(project.media.every(item => item.width >= 1500 && item.height >= 1500));
   assert.equal(data.hero.portrait, 'assets/images/meharin-portrait.webp');
   assert.doesNotMatch(html, /assets\/images\/anzara-(?:saree|gharara)\.webp/);
 });
