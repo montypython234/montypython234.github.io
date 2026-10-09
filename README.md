@@ -1,6 +1,6 @@
 # The Meharin Edit
 
-Meharin Onty's static marketing portfolio. `content/portfolio.json` is the single source for the website and six-page PDF. The original CV, private documents, browser data and source archive are not part of this repository.
+Meharin Onty's static marketing portfolio. `content/portfolio.json` is the single source for the website and seven-page PDF, including the Cheeky Panda university project. The original CV, private documents, browser data and source archive are not part of this repository.
 
 ## Build and preview
 

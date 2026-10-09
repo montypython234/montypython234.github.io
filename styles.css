@@ -102,6 +102,7 @@ nav a { font-size: .88rem; font-weight: 600; text-decoration: none; padding: 10p
 .work-card--anzara .work-card-image > img { object-fit: cover; object-position: center 32%; }
 .work-card--flora .work-card-image { background: #e8ecf4; }
 .work-card--boden .work-card-image { background: #e1ebdf; }
+.work-card--cheeky-panda .work-card-image { background: #f4eaca; }
 .card-arrow { position: absolute; right: 17px; bottom: 17px; width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: var(--paper); color: var(--ink); font-size: 1.3rem; }
 .work-card-caption { display: flex; justify-content: space-between; gap: 20px; padding: 20px 2px 0; }
 .work-card-caption h3 { font-family: var(--serif); font-size: 1.9rem; font-weight: 400; margin: 6px 0; }
@@ -132,6 +133,7 @@ nav a { font-size: .88rem; font-weight: 600; text-decoration: none; padding: 10p
 .project--portrait-pair .image-wrap { padding: 8px; background: #e7dace; }
 .project--portrait-pair .project-media img { aspect-ratio: 9 / 16; object-fit: cover; }
 .project--concept .project-gallery .image-wrap { padding: 20px; }
+.project--brochure .project-gallery .image-wrap { background: #f4eaca; }
 #flora .image-wrap { background: #e8ecf4; }
 #boden .image-wrap { background: #e1ebdf; }
 .story-sections { display: grid; gap: 24px; }
@@ -339,6 +341,9 @@ nav a { font-size: .88rem; font-weight: 600; text-decoration: none; padding: 10p
   .project--concept .project-gallery { max-width: 104mm; margin-inline: auto; }
   .project--concept .project-gallery .image-wrap { padding: 3.5mm; }
   .project--concept .project-media img { max-height: 98mm; width: 100%; object-fit: contain; }
+  .project--brochure .project-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 5mm; }
+  .project--brochure .project-media img { width: 100%; height: 60mm; object-fit: contain; }
+  .project--brochure .project-copy { margin-top: 8mm; }
   .project-copy { margin-top: 6mm; }
   .story-sections { grid-template-columns: repeat(3,1fr); gap: 5mm; }
   .story-sections h3, .project-note h3 { font-size: 8.5pt; margin-bottom: 2mm; }

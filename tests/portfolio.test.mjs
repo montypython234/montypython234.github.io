@@ -10,9 +10,9 @@ const html = await readFile(path.join(root, 'index.html'), 'utf8');
 const source = await readFile(path.join(root, 'content', 'portfolio.json'), 'utf8');
 const decode = value => value.replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
 
-test('all four distinct projects have clear attribution and evidence links', () => {
-  assert.equal(data.projects.length, 4);
-  assert.equal(new Set(data.projects.map(project => project.id)).size, 4);
+test('all five distinct projects have clear attribution and evidence links', () => {
+  assert.equal(data.projects.length, 5);
+  assert.equal(new Set(data.projects.map(project => project.id)).size, data.projects.length);
   for (const project of data.projects) {
     assert.ok(project.summary && project.status && project.period);
     assert.equal(project.sections.length, 3);
@@ -20,6 +20,28 @@ test('all four distinct projects have clear attribution and evidence links', () 
     assert.ok(html.includes(`id="${project.id}"`));
   }
   assert.equal(data.projects.filter(project => project.category === 'Independent concept').length, 2);
+});
+
+test('Cheeky Panda is presented as academic work, with both brochure sides', () => {
+  const project = data.projects.find(item => item.id === 'cheeky-panda');
+  assert.ok(project);
+  assert.equal(project.category, 'University project');
+  assert.match(project.status, /not commissioned/);
+  assert.match(project.summary, /two-sided brochure/);
+  assert.equal(project.media.length, 2);
+  assert.match(project.note.text, /not commissioned or approved/);
+  assert.match(project.note.text, /not a statement of verified environmental performance/);
+  assert.doesNotMatch(JSON.stringify(project), /client results|conversion uplift|campaign revenue/i);
+});
+
+test('PDF page numbering follows the number of selected projects', () => {
+  const total = data.projects.length + 2;
+  const footers = [...html.matchAll(/class="folio-footer"[^>]*>.*?<span>(\d{2}) \/ (\d{2})<\/span>/g)];
+  assert.equal(footers.length, total);
+  footers.forEach((match, index) => {
+    assert.equal(Number(match[1]), index + 1);
+    assert.equal(Number(match[2]), total);
+  });
 });
 
 test('substantive portfolio content is present in the generated document', () => {

@@ -18,6 +18,7 @@ def main():
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
     data = json.loads((root / "content" / "portfolio.json").read_text(encoding="utf-8"))
+    image_count = sum(len(project["media"]) for project in data["projects"])
     pdf = root / data["pdf"]
     assert pdf.stat().st_size < 5_000_000, "The portfolio PDF should be under 5 MB."
     with pymupdf.open(pdf) as document:
@@ -60,15 +61,16 @@ def main():
                     "(images) => images.some(i => i.clientHeight > i.parentElement.clientHeight)"
                 ), "A project thumbnail is being unintentionally clipped."
                 assert page.locator("article.project").count() == len(data["projects"])
-                zoom = page.locator(".zoom-button").first
-                zoom.click()
-                assert page.locator("dialog").evaluate("(element) => element.open")
-                full_image = page.locator(".dialog-original")
-                assert full_image.get_attribute("href") == zoom.get_attribute("href") or \
-                    full_image.get_attribute("href").endswith(zoom.get_attribute("href"))
-                page.keyboard.press("Escape")
-                assert not page.locator("dialog").evaluate("(element) => element.open")
-                assert zoom.evaluate("(element) => element === document.activeElement")
+                assert page.locator(".zoom-button").count() == image_count
+                for zoom in page.locator(".zoom-button").all():
+                    zoom.click()
+                    assert page.locator("dialog").evaluate("(element) => element.open")
+                    full_image = page.locator(".dialog-original")
+                    assert full_image.get_attribute("href") == zoom.get_attribute("href") or \
+                        full_image.get_attribute("href").endswith(zoom.get_attribute("href"))
+                    page.keyboard.press("Escape")
+                    assert not page.locator("dialog").evaluate("(element) => element.open")
+                    assert zoom.evaluate("(element) => element === document.activeElement")
                 download = page.request.get(args.url.rstrip("/") + "/" + data["pdf"])
                 assert download.status == 200 and download.body().startswith(b"%PDF-")
                 print(f"Passed: {width}px, images, dialog, focus, PDF download and JS errors.")
@@ -77,7 +79,7 @@ def main():
             page.goto(args.url, wait_until="networkidle")
             assert page.locator("article.project").count() == len(data["projects"])
             assert page.locator("h1").inner_text() == data["hero"]["greeting"]
-            assert page.locator("a.zoom-button[href]").count() == 6
+            assert page.locator("a.zoom-button[href]").count() == image_count
             page.close()
             for width in [1440, 768, 390, 320]:
                 page = browser.new_page(viewport={"width": width, "height": 1024})

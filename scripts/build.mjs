@@ -4,6 +4,7 @@ import path from 'node:path';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const data = JSON.parse(await readFile(path.join(root, 'content', 'portfolio.json'), 'utf8'));
+const pageCount = data.projects.length + 2;
 const escape = value => String(value).replace(/[&<>"']/g, char => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
 })[char]);
@@ -16,7 +17,7 @@ const linkedIn = () => external(data.linkedin,
   .replace('>LinkedIn', '><img src="assets/icons/linkedin.png" width="24" height="24" alt="">LinkedIn');
 const flower = '<svg class="flower" viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><ellipse cx="50" cy="27" rx="12" ry="25"/><ellipse cx="50" cy="73" rx="12" ry="25"/><ellipse cx="27" cy="50" rx="25" ry="12"/><ellipse cx="73" cy="50" rx="25" ry="12"/><ellipse cx="50" cy="27" rx="12" ry="25" transform="rotate(45 50 50)"/><ellipse cx="50" cy="73" rx="12" ry="25" transform="rotate(45 50 50)"/><ellipse cx="27" cy="50" rx="25" ry="12" transform="rotate(45 50 50)"/><ellipse cx="73" cy="50" rx="25" ry="12" transform="rotate(45 50 50)"/></g><circle cx="50" cy="50" r="11" fill="var(--paper)"/></svg>';
 const tags = values => `<ul class="tags" aria-label="Skills used">${values.map(value => `<li>${escape(value)}</li>`).join('')}</ul>`;
-const footer = page => `<div class="folio-footer" aria-hidden="true"><span>${escape(data.brand)} / ${escape(data.name)}</span><span>${String(page).padStart(2, '0')} / 06</span></div>`;
+const footer = page => `<div class="folio-footer" aria-hidden="true"><span>${escape(data.brand)} / ${escape(data.name)}</span><span>${String(page).padStart(2, '0')} / ${String(pageCount).padStart(2, '0')}</span></div>`;
 const projectLinks = project => project.links.length
   ? `<div class="project-links">${project.links.map(link => external(link.url, link.label)).join('')}</div>` : '';
 const media = item => `<figure class="project-media">
@@ -112,7 +113,7 @@ const html = `<!doctype html>
       </div>
       <div class="contact-block" id="contact"><div><h3>${escape(data.about.contactTitle)}</h3><p>${escape(data.about.contactText)}</p></div><div class="contact-links"><a class="email-link" href="mailto:${escape(data.email)}">${escape(data.email)} <span aria-hidden="true">&#8599;</span></a>${linkedIn()}<a class="text-link screen-only" href="${escape(data.pdf)}" download>Download the portfolio PDF <span aria-hidden="true">&#8595;</span></a></div></div>
       <p class="rights-note">${escape(data.footer.disclaimer)}</p>
-      ${footer(6)}
+      ${footer(pageCount)}
     </section>
   </main>
   <footer class="site-footer screen-only"><span>${escape(data.footer.credit)}</span><span>${escape(data.footer.privacy)}</span><a href="#top">Back to top <span aria-hidden="true">&#8593;</span></a></footer>

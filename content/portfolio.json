@@ -34,7 +34,7 @@
   "workIntro": {
     "eyebrow": "The selected edit",
     "title": "Different brands. The same care.",
-    "text": "A mix of work delivered in real roles and self-initiated concepts. Each project makes my contribution, the audience and the thinking behind the work clear."
+    "text": "A mix of real-world work, independent concepts and a university brand PR project. Each case makes my contribution, the audience and the thinking behind the work clear."
   },
   "projects": [
     {
@@ -254,6 +254,60 @@
       },
       "tools": ["Canva", "Visual storytelling", "Seasonal messaging", "Social copy"],
       "links": []
+    },
+    {
+      "id": "cheeky-panda",
+      "number": "05",
+      "brand": "The Cheeky Panda",
+      "title": "Making a big message feel approachable.",
+      "category": "University project",
+      "status": "Academic concept / not commissioned",
+      "period": "University brand PR exercise",
+      "sector": "Consumer goods / brand communications",
+      "summary": "A two-sided brochure concept exploring how a playful brand voice can make an environmental message more engaging for a Gen Z audience.",
+      "thumbnail": "assets/images/cheeky-panda-front.webp",
+      "thumbnailAlt": "Colourful Cheeky Panda university brochure artwork in green, orange and yellow.",
+      "layout": "brochure",
+      "media": [
+        {
+          "src": "assets/images/cheeky-panda-front.webp",
+          "width": 483,
+          "height": 316,
+          "alt": "Front of the academic brochure, combining panda illustrations, environmental messaging and a 'Join us in taking action' headline.",
+          "caption": "Brochure front: a campaign hook, a brand message and an invitation to act.",
+          "url": "https://montypython234.github.io/assets/images/cheeky-panda-front.webp",
+          "linkLabel": "View the front artwork"
+        },
+        {
+          "src": "assets/images/cheeky-panda-reverse.webp",
+          "width": 484,
+          "height": 326,
+          "alt": "Reverse of the academic brochure, organised into 'Why does it matter?', 'What you can do' and 'What we're doing' panels.",
+          "caption": "Brochure reverse: three clear message sections, cropped for the portfolio.",
+          "url": "https://montypython234.github.io/assets/images/cheeky-panda-reverse.webp",
+          "linkLabel": "View the reverse artwork"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "The brief",
+          "text": "Create a university brand PR concept for The Cheeky Panda, balancing an environmental theme with the brand's playful personality and a young audience."
+        },
+        {
+          "heading": "My contribution",
+          "text": "Created the brochure concept in Canva, combining panda illustrations, bold green-and-orange sections, explanatory copy and calls to action across two sides."
+        },
+        {
+          "heading": "What this shows",
+          "text": "Thinking beyond a single social post: organising a longer message, adapting brand tone and building a visual sequence from an opening idea to a reader action."
+        }
+      ],
+      "note": {
+        "label": "An academic concept",
+        "text": "This university exercise was not commissioned or approved by The Cheeky Panda. The draft copy is illustrative, not a statement of verified environmental performance; its claims would need checking before a real campaign."
+      },
+      "tools": ["Canva", "Brand tone", "Message hierarchy", "Brochure design"],
+      "links": []
     }
   ],
   "about": {
@@ -302,7 +356,7 @@
   },
   "footer": {
     "credit": "Selected work by Meharin Onty.",
-    "disclaimer": "Brand names and original brand assets belong to their respective owners. Independent concepts are clearly labelled and do not imply a client relationship or endorsement.",
+    "disclaimer": "Brand names and original brand assets belong to their respective owners. Independent and academic concepts are clearly labelled and do not imply a client relationship or endorsement.",
     "privacy": "No tracking, advertising cookies or contact forms. Email and social links open their respective services."
   }
 }
