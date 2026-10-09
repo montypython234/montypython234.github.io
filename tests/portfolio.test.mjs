@@ -60,7 +60,7 @@ test('Anzara previews use product-detail assets without changing the source vide
   assert.doesNotMatch(html, /assets\/images\/anzara-(?:saree|gharara)\.webp/);
 });
 
-test('Nasima project card uses the real childcare setting without duplicating case-study media', () => {
+test("Nasima's Childcare project card uses the real setting without duplicating case-study media", () => {
   const project = data.projects.find(item => item.id === 'nasimas');
   assert.equal(project.thumbnail, 'assets/images/nasimas-brand-card.webp');
   assert.ok(project.media.every(item => item.src !== project.thumbnail));
@@ -100,7 +100,7 @@ test('hero highlights use verified, evidence-backed achievements', () => {
   assert.deepEqual(data.hero.proof, [
     { value: 'Distinction', label: 'MSc International Marketing' },
     { value: '796.5K views', label: 'Two featured Anzara TikToks' },
-    { value: '5.7K paid views', label: 'Three Nasima Facebook campaigns' },
+    { value: '5.7K paid views', label: "Nasima's Childcare paid social" },
   ]);
 });
 
