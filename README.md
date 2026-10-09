@@ -38,6 +38,8 @@ Publish the `main` branch from the repository root. The site uses relative asset
 
 The portfolio uses local fonts and images, no analytics and no third-party embeds. External project links open in a new tab. Image enlargement uses a keyboard-accessible native dialog.
 
+Reusable source derivatives and evidence files belong in the gitignored `.portfolio-assets\` directory. They remain local-only and must not be published or committed.
+
 Anzara previews intentionally focus on garments rather than faces. Preserve the original video links, dates, view-count context and contribution attribution when changing these crops. The personal introduction portrait is a separate asset.
 
 DM Sans and DM Serif Display are distributed under the SIL Open Font License; the corresponding licences are in `assets\fonts`. The LinkedIn icon is the official blue `[in]` asset, used only as a link to Meharin's profile. Brand names and supplied project artwork remain the property of their respective owners. Independent concepts are not claims of commissioned work or brand endorsement.

@@ -1,6 +1,7 @@
 node_modules/
 __pycache__/
 .venv/
+.portfolio-assets/
 .DS_Store
 Thumbs.db
 test-results/
