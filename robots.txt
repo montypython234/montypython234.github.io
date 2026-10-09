@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://montypython234.github.io/sitemap.xml

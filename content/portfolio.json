@@ -1,0 +1,308 @@
+{
+  "name": "Meharin Onty",
+  "brand": "The Meharin Edit",
+  "siteUrl": "https://montypython234.github.io",
+  "email": "meharin.onty@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/meharin-onty-a744821b3/",
+  "pdf": "downloads/meharin-onty-marketing-portfolio.pdf",
+  "edition": "Selected work / 2026",
+  "location": "Enfield, North London",
+  "hero": {
+    "eyebrow": "A marketing portfolio with a personal point of view",
+    "greeting": "Hi! I'm Meharin.",
+    "headline": "Thoughtful ideas.\nContent that feels human.",
+    "intro": "I'm an MSc International Marketing graduate with Distinction, bringing together hands-on UK marketing experience, fashion social content and a love of a well-considered visual idea.",
+    "availability": "Looking for an in-house graduate or Marketing Assistant role.",
+    "portrait": "assets/images/meharin-portrait.webp",
+    "portraitAlt": "Meharin smiling, seated against a warm stone background.",
+    "portraitCaption": "A curious mind. A creative eye. A practical approach.",
+    "proof": [
+      {
+        "value": "Distinction",
+        "label": "MSc International Marketing"
+      },
+      {
+        "value": "796.5K views",
+        "label": "Two featured Anzara TikToks"
+      },
+      {
+        "value": "Fresh ideas",
+        "label": "Independent creative concepts"
+      }
+    ]
+  },
+  "workIntro": {
+    "eyebrow": "The selected edit",
+    "title": "Different brands. The same care.",
+    "text": "A mix of work delivered in real roles and self-initiated concepts. Each project makes my contribution, the audience and the thinking behind the work clear."
+  },
+  "projects": [
+    {
+      "id": "nasimas",
+      "number": "01",
+      "brand": "Nasima's Childcare",
+      "title": "A clearer digital front door.",
+      "category": "Real-world work",
+      "status": "Marketing internship",
+      "period": "April 2025 - April 2026",
+      "sector": "Local services / childcare",
+      "summary": "Supporting a local childcare business with parent-friendly social content, Meta advertising and practical website updates.",
+      "thumbnail": "assets/images/nasimas-website.webp",
+      "thumbnailAlt": "The childcare website's parent information and gallery.",
+      "layout": "landscape",
+      "media": [
+        {
+          "src": "assets/images/nasimas-website.webp",
+          "width": 1360,
+          "height": 1000,
+          "alt": "Website content explaining funded childcare and showing the play environment.",
+          "caption": "Selected live website excerpts: useful information and a view of the play environment."
+        },
+        {
+          "src": "assets/images/nasimas-brand.webp",
+          "width": 520,
+          "height": 519,
+          "alt": "Nasima's Childcare social identity with a colourful tree and a play-and-grow message.",
+          "caption": "The business's social identity, included as project context."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "The brief",
+          "text": "Help a small Enfield childcare business present its services clearly to local parents. The content needed to feel reassuring, easy to understand and consistent with the information on its website."
+        },
+        {
+          "heading": "My contribution",
+          "items": [
+            "Created and managed Facebook content and designed posts in Canva.",
+            "Ran Meta Facebook Ads Manager campaigns aimed at local parents.",
+            "Updated website HTML content and imagery through GitHub, including funded-childcare information."
+          ]
+        },
+        {
+          "heading": "What this shows",
+          "text": "Practical marketing support across more than one channel: adapting a message for social, keeping information current and paying attention to the detail that helps a parent take the next step."
+        }
+      ],
+      "note": {
+        "label": "A useful lesson",
+        "text": "Clarity is part of the creative work. For a service like childcare, helpful information and a reassuring tone matter as much as an attractive post."
+      },
+      "tools": ["Canva", "Meta Ads Manager", "HTML content", "GitHub"],
+      "links": [
+        {
+          "label": "View the website",
+          "url": "https://nasimaschildcare.co.uk/"
+        },
+        {
+          "label": "View the Facebook page",
+          "url": "https://www.facebook.com/p/Nasimas-Childcare-Enfield-61580039511738/"
+        }
+      ]
+    },
+    {
+      "id": "anzara",
+      "number": "02",
+      "brand": "Anzara",
+      "title": "Bringing collections to the feed.",
+      "category": "Real-world work",
+      "status": "Social content and live presenting",
+      "period": "January 2022 - December 2023",
+      "sector": "Fashion / social media",
+      "summary": "Fashion content and live presenting for a clothing brand, with work across TikTok, Instagram, Facebook and YouTube.",
+      "thumbnail": "assets/images/anzara-gharara.webp",
+      "thumbnailAlt": "A still from an Anzara collection video featuring an embroidered gharara outfit.",
+      "layout": "portrait-pair",
+      "media": [
+        {
+          "src": "assets/images/anzara-saree.webp",
+          "width": 497,
+          "height": 882,
+          "alt": "Anzara ready-saree content showing fabric and embroidery in a lavender outfit.",
+          "caption": "Ready-saree collection / TikTok / March 2023",
+          "metric": "542.6K views",
+          "url": "https://www.tiktok.com/@anzara.official/video/7211155694119111937",
+          "linkLabel": "Watch the saree video"
+        },
+        {
+          "src": "assets/images/anzara-gharara.webp",
+          "width": 497,
+          "height": 882,
+          "alt": "Anzara collection content featuring an embellished gharara outfit.",
+          "caption": "Gharara collection / TikTok / April 2023",
+          "metric": "253.9K views",
+          "url": "https://www.tiktok.com/@anzara.official/video/7220067355550846210",
+          "linkLabel": "Watch the gharara video"
+        }
+      ],
+      "sections": [
+        {
+          "heading": "The context",
+          "text": "Collection content had to make the clothing feel engaging beyond a still product image. Short-form formats and livestreams offered different ways to show the garments and connect with viewers."
+        },
+        {
+          "heading": "My contribution",
+          "items": [
+            "Created fashion content and short-form videos for the brand's social channels.",
+            "Hosted livestreams and presented collections to an online audience.",
+            "Worked with formats including Reels, Stories, TikToks, YouTube videos and Facebook video."
+          ]
+        },
+        {
+          "heading": "What this shows",
+          "text": "Confidence communicating a product's appeal, familiarity with platform-specific content and experience working as part of a brand's wider production effort."
+        }
+      ],
+      "note": {
+        "label": "Content in context",
+        "text": "Created with Anzara's wider team; my contribution was content creation and presenting. Public TikTok view counts checked on 9 October 2026. The figures refer to these two videos, not an average across all my work."
+      },
+      "tools": ["CapCut", "InShot", "TikTok", "Instagram", "Facebook", "YouTube"],
+      "links": [
+        {
+          "label": "View Anzara on Instagram",
+          "url": "https://www.instagram.com/anzara.official/"
+        },
+        {
+          "label": "Visit Anzara",
+          "url": "https://www.anzara.com/"
+        }
+      ]
+    },
+    {
+      "id": "flora",
+      "number": "03",
+      "brand": "Flora",
+      "title": "An idea with a natural flow.",
+      "category": "Independent concept",
+      "status": "Self-initiated / not commissioned",
+      "period": "Canva concept / portfolio refinement",
+      "sector": "Beauty / social creative",
+      "summary": "A flowing-hair visual that turns a simple seasonal message into a recognisable beauty concept.",
+      "thumbnail": "assets/images/flora-concept.webp",
+      "thumbnailAlt": "Flora beauty concept in navy and white, with hair flowing like a waterfall.",
+      "layout": "concept",
+      "media": [
+        {
+          "src": "assets/images/flora-concept.webp",
+          "width": 1024,
+          "height": 1024,
+          "alt": "A navy flowing-hair illustration alongside the headline 'Let your summer style flow' and the Flora logo.",
+          "caption": "An independent Canva concept, with the headline refined for this portfolio."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "The creative challenge",
+          "text": "Give a local beauty business a simple, distinctive seasonal social post. I wanted the image and the words to work together rather than compete for attention."
+        },
+        {
+          "heading": "The idea",
+          "text": "The hair becomes a waterfall: a visual metaphor for movement and flow. A restrained navy-and-white palette keeps the silhouette and brand name easy to recognise."
+        },
+        {
+          "heading": "How I'd develop it",
+          "text": "Pair the awareness post with a service-led Story and a clear booking link. I would test the message against a treatment-led version and compare booking-link clicks, not just likes."
+        }
+      ],
+      "note": {
+        "label": "From concept to next step",
+        "text": "The original Canva idea is mine. This portfolio version refines the headline to 'Let your summer style flow'. The suggested rollout and measurement are proposals, not delivered campaign results."
+      },
+      "tools": ["Canva", "Concept development", "Social copy", "Visual hierarchy"],
+      "links": []
+    },
+    {
+      "id": "boden",
+      "number": "04",
+      "brand": "Boden",
+      "title": "Let the product idea bloom.",
+      "category": "Independent concept",
+      "status": "Self-initiated / not commissioned",
+      "period": "Original Canva concept",
+      "sector": "Fashion / seasonal creative",
+      "summary": "A dress silhouette grows from a flower, connecting a summer message to the product category in one glance.",
+      "thumbnail": "assets/images/boden-concept.webp",
+      "thumbnailAlt": "Green-and-white Boden concept with a flower turning into a dress silhouette.",
+      "layout": "concept",
+      "media": [
+        {
+          "src": "assets/images/boden-concept.webp",
+          "width": 1024,
+          "height": 1024,
+          "alt": "A green flower-and-dress illustration with the headline 'Let your style bloom this summer' and the Boden name.",
+          "caption": "An independent summer concept exploring the connection between flowers, dresses and seasonal style."
+        }
+      ],
+      "sections": [
+        {
+          "heading": "The creative challenge",
+          "text": "Create a memorable seasonal fashion post without relying on a busy layout. The idea needed to communicate summer and clothing immediately."
+        },
+        {
+          "heading": "The idea",
+          "text": "The flower and dress share one silhouette, giving 'bloom' a visual meaning. Green, white space and a short headline make the concept feel fresh and easy to scan."
+        },
+        {
+          "heading": "How I'd develop it",
+          "text": "Extend the concept into a product-led carousel using approved collection photography, ending with a 'Shop summer dresses' call to action. I would compare product-page clicks and saves across the creative versions."
+        }
+      ],
+      "note": {
+        "label": "Clear project status",
+        "text": "This is a self-initiated creative exercise, not work commissioned, approved or published by Boden. The proposed extension is a next-step idea, not a campaign result."
+      },
+      "tools": ["Canva", "Visual storytelling", "Seasonal messaging", "Social copy"],
+      "links": []
+    }
+  ],
+  "about": {
+    "eyebrow": "The person behind the edit",
+    "title": "Creative by instinct.\nThoughtful in practice.",
+    "intro": "I enjoy finding the small connection that makes a message click: a flower becoming a dress, a helpful answer for a parent, or a product brought to life on camera.",
+    "body": "My experience spans fashion social content and a UK marketing internship. I'm now looking to bring that mix of creativity, communication and practical follow-through to an in-house marketing team.",
+    "role": "Graduate marketing / Marketing Assistant / paid marketing internships",
+    "education": [
+      {
+        "title": "MSc International Marketing",
+        "institution": "London South Bank University",
+        "detail": "Distinction / awarded August 2026",
+        "highlights": [
+          "87% in Social Media Marketing and Digital PR.",
+          "Selected as a student ambassador for the Chartered Institute of Marketing during my MSc.",
+          "Study included Brand Management and Cross Cultural Consumer Behaviour."
+        ]
+      },
+      {
+        "title": "BBA Marketing",
+        "institution": "BRAC University",
+        "detail": "Completed 2023",
+        "highlights": [
+          "Study included Advertising, Basic Marketing Research and Consumer Behaviour."
+        ]
+      }
+    ],
+    "learning": {
+      "title": "Additional learning",
+      "text": "Google courses via Coursera: Foundations of Digital Marketing and E-commerce; Attract and Engage Customers with Digital Marketing."
+    },
+    "skills": [
+      {
+        "title": "Content and creative",
+        "items": ["Canva", "CapCut", "InShot", "Short-form video", "Social content"]
+      },
+      {
+        "title": "Campaign support",
+        "items": ["Meta Ads Manager", "Facebook page management", "Website content updates", "Microsoft 365"]
+      }
+    ],
+    "languages": "English, Bengali and Hindi",
+    "contactTitle": "Let's make something useful.",
+    "contactText": "If your team is looking for a curious marketing graduate with a creative eye, I'd love to hear from you."
+  },
+  "footer": {
+    "credit": "Selected work by Meharin Onty.",
+    "disclaimer": "Brand names and original brand assets belong to their respective owners. Independent concepts are clearly labelled and do not imply a client relationship or endorsement.",
+    "privacy": "No tracking, advertising cookies or contact forms. Email and social links open their respective services."
+  }
+}

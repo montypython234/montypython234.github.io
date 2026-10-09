@@ -1,0 +1,15 @@
+{
+  "name": "the-meharin-edit",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Meharin Onty's marketing portfolio, with one content source for web and PDF.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "serve": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
