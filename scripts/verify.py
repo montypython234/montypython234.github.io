@@ -19,6 +19,7 @@ def main():
     root = Path(__file__).resolve().parent.parent
     data = json.loads((root / "content" / "portfolio.json").read_text(encoding="utf-8"))
     image_count = sum(len(project["media"]) for project in data["projects"])
+    testimonial_projects = [project for project in data["projects"] if project.get("testimonial")]
     pdf = root / data["pdf"]
     assert pdf.stat().st_size < 5_000_000, "The portfolio PDF should be under 5 MB."
     with pymupdf.open(pdf) as document:
@@ -32,8 +33,17 @@ def main():
         ]
         for course in data["about"]["learning"]["courses"]:
             required.extend([course["title"], f"{course['grade']}% course grade"])
-        for project in data["projects"]:
+        for index, project in enumerate(data["projects"]):
             required.extend([project["title"], project["summary"], project["note"]["text"]])
+            if project.get("testimonial"):
+                testimonial = project["testimonial"]
+                project_text = normalized(document[index + 1].get_text())
+                for key in ["quote", "author", "role"]:
+                    assert testimonial[key] in project_text, f"Missing testimonial {key} on its project page."
+                    assert text.count(testimonial[key]) == 1, f"Repeated testimonial {key} in the PDF."
+                assert testimonial["url"] in [
+                    link.get("uri", "") for link in document[index + 1].get_links()
+                ], "The PDF testimonial must link to its LinkedIn source."
             for section in project["sections"]:
                 required.extend(section.get("items", [section.get("text", "")]))
         for value in required:
@@ -82,6 +92,23 @@ def main():
                 ), "A project thumbnail is being unintentionally clipped."
                 assert page.locator("article.project").count() == len(data["projects"])
                 assert page.locator(".zoom-button").count() == image_count
+                assert page.locator(".project-testimonial").count() == len(testimonial_projects)
+                for project in testimonial_projects:
+                    testimonial = project["testimonial"]
+                    figure = page.locator(f"#{project['id']} > .project-testimonial")
+                    assert figure.locator("blockquote").inner_text() == f"\u201c{testimonial['quote']}\u201d"
+                    assert normalized(figure.locator("figcaption").inner_text()) == \
+                        f"{testimonial['author']}, {testimonial['role']} / LinkedIn\u2197"
+                    link = figure.locator("a")
+                    assert link.get_attribute("href") == testimonial["url"]
+                    link.focus()
+                    assert link.evaluate("(a) => a === document.activeElement")
+                    if width == 1440:
+                        assert figure.bounding_box()["height"] <= 48, "The desktop testimonial must stay compact."
+                        for part in ["blockquote", "figcaption"]:
+                            assert figure.locator(part).evaluate(
+                                "(e) => e.getBoundingClientRect().height <= parseFloat(getComputedStyle(e).lineHeight) + 1"
+                            ), "The desktop testimonial must fit on one line."
                 course_cards = page.locator(".course-card")
                 assert course_cards.count() == len(data["about"]["learning"]["courses"])
                 for card, course in zip(course_cards.all(), data["about"]["learning"]["courses"]):
@@ -113,6 +140,26 @@ def main():
             assert page.locator("h1").inner_text() == data["hero"]["greeting"]
             assert page.locator("a.zoom-button[href]").count() == image_count
             assert page.locator(".course-card a[href]").count() == len(data["about"]["learning"]["courses"])
+            assert page.locator(".project-testimonial blockquote").count() == len(testimonial_projects)
+            page.close()
+            page = browser.new_page(viewport={"width": 1280, "height": 960})
+            page.goto(args.url, wait_until="networkidle")
+            page.evaluate("document.fonts.ready")
+            page.locator("img[src]").evaluate_all(
+                "(images) => Promise.all(images.map(i => { i.loading = 'eager'; return i.decode(); }))"
+            )
+            page.emulate_media(media="print")
+            for project in testimonial_projects:
+                article = page.locator(f"#{project['id']}")
+                figure = article.locator(".project-testimonial")
+                assert figure.bounding_box()["height"] <= 26, "The printed testimonial must stay below 7 mm."
+                for part in ["blockquote", "figcaption"]:
+                    assert figure.locator(part).evaluate(
+                        "(e) => e.getBoundingClientRect().height <= parseFloat(getComputedStyle(e).lineHeight) + 1"
+                    ), "The printed testimonial must fit on one line."
+                layout = article.locator(".project-layout").bounding_box()
+                footer = article.locator(".folio-footer").bounding_box()
+                assert layout["y"] + layout["height"] <= footer["y"], "Project content must not overlap the footer."
             page.close()
             for width in [1440, 768, 390, 320]:
                 page = browser.new_page(viewport={"width": width, "height": 1024})

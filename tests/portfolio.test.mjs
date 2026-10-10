@@ -89,6 +89,26 @@ test("Nasima's Childcare explains the social launch without small performance fi
   }
 });
 
+test('the manager testimonial is one short, attributed LinkedIn excerpt without a date', () => {
+  const projects = data.projects.filter(project => project.testimonial);
+  assert.equal(projects.length, 1);
+  assert.equal(projects[0].id, 'nasimas');
+  assert.deepEqual(projects[0].testimonial, {
+    quote: 'She quickly transformed our online presence...',
+    author: 'Nasima Khan',
+    role: "Manager, Nasima's Childcare",
+    url: data.linkedin,
+  });
+  assert.equal([...html.matchAll(/class="project-testimonial"/g)].length, 1);
+  const project = html.match(/<article\b[^>]*id="nasimas"[\s\S]*?<\/article>/)[0];
+  const quote = project.match(/<figure class="project-testimonial">[\s\S]*?<\/figure>/)[0];
+  assert.ok(quote.includes(`<blockquote cite="${data.linkedin}">`));
+  assert.ok(quote.includes(`href="${data.linkedin}"`));
+  assert.match(quote, /<figcaption><strong>Nasima Khan<\/strong>/);
+  assert.doesNotMatch(quote, /<time\b/);
+  assert.doesNotMatch(quote.replace(/<[^>]+>|&(?:#\d+|\w+);/g, ''), /\d/);
+});
+
 test('Flora is an original independent concept, not a portfolio revision', () => {
   const project = data.projects.find(item => item.id === 'flora');
   assert.equal(project.period, 'Original Canva concept');
@@ -154,6 +174,9 @@ test('substantive portfolio content is present in the generated document', () =>
   ];
   for (const project of data.projects) {
     relevant.push(project.title, project.summary, project.note.text);
+    if (project.testimonial) {
+      relevant.push(project.testimonial.quote, project.testimonial.author, project.testimonial.role);
+    }
     for (const section of project.sections) relevant.push(...(section.items || [section.text]));
   }
   for (const text of relevant) assert.ok(plain.includes(text), `Missing shared copy: ${text}`);

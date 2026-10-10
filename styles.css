@@ -118,7 +118,13 @@ nav a { font-size: .88rem; font-weight: 600; text-decoration: none; padding: 10p
 .project-heading h2 { font-size: clamp(2.4rem,4.1vw,3.65rem); margin-top: 12px; }
 .project-period { font-size: .75rem; color: var(--muted); flex-shrink: 0; max-width: 180px; text-align: right; }
 .project-summary { max-width: 680px; margin-top: 20px; color: var(--muted); font-size: 1rem; }
+.project-testimonial { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin: 20px 0 0; padding: 6px 0 6px 14px; border-left: 3px solid var(--coral); }
+.project-testimonial blockquote { min-width: 0; margin: 0; color: var(--ink); font-family: var(--serif); font-size: 1.05rem; line-height: 1.45; }
+.project-testimonial figcaption { min-width: 0; color: var(--muted); font-size: .78rem; line-height: 1.6; }
+.project-testimonial strong { color: var(--ink); font-weight: 600; }
+.project-testimonial a { white-space: nowrap; text-underline-offset: 3px; }
 .project-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); align-items: start; gap: 55px; margin-top: 40px; }
+.project-testimonial + .project-layout { margin-top: 24px; }
 .project-gallery { display: grid; gap: 24px; width: 100%; min-width: 0; }
 .project-media .image-wrap { position: relative; padding: 12px; background: #eeeae2; border-radius: 7px; }
 .project-media img { width: 100%; height: auto; border-radius: 3px; }
@@ -336,7 +342,11 @@ nav a { font-size: .88rem; font-weight: 600; text-decoration: none; padding: 10p
   .project-heading h2 { font-size: 29pt; margin-top: 2.8mm; }
   .project-period { font-size: 7.5pt; margin-top: 3mm; max-width: none; text-align: left; }
   .project-summary { font-size: 10pt; margin-top: 4mm; line-height: 1.5; max-width: 170mm; }
+  .project-testimonial { gap: 1mm 3mm; margin-top: 2mm; padding: 0 0 0 2.5mm; border-left-width: .5mm; break-inside: avoid; flex-shrink: 0; }
+  .project-testimonial blockquote { font-size: 10pt; line-height: 1.35; }
+  .project-testimonial figcaption { font-size: 8.5pt; line-height: 1.35; }
   .project-layout { display: block; margin-top: 7mm; }
+  .project-testimonial + .project-layout { margin-top: 2mm; }
   .project-gallery { display: grid; gap: 5mm; }
   .project-media .image-wrap { border-radius: 2mm; padding: 2.5mm; }
   .project-media figcaption { font-size: 7.2pt; line-height: 1.4; margin-top: 2mm; }

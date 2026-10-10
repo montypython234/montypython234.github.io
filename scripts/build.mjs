@@ -20,6 +20,10 @@ const tags = values => `<ul class="tags" aria-label="Skills used">${values.map(v
 const footer = page => `<div class="folio-footer" aria-hidden="true"><span>${escape(data.brand)} / ${escape(data.name)}</span><span>${String(page).padStart(2, '0')} / ${String(pageCount).padStart(2, '0')}</span></div>`;
 const projectLinks = project => project.links.length
   ? `<div class="project-links">${project.links.map(link => external(link.url, link.label)).join('')}</div>` : '';
+const testimonial = item => `<figure class="project-testimonial">
+    <blockquote cite="${escape(item.url)}"><p>&ldquo;${escape(item.quote)}&rdquo;</p></blockquote>
+    <figcaption><strong>${escape(item.author)}</strong>, ${escape(item.role)} / ${external(item.url, 'LinkedIn', `aria-label="Read ${escape(item.author)}&#39;s recommendation on LinkedIn (opens in a new tab)"`)}</figcaption>
+  </figure>`;
 const media = item => `<figure class="project-media">
   <div class="image-wrap">
     <img src="${escape(item.src)}" width="${item.width}" height="${item.height}" alt="${escape(item.alt)}" loading="lazy" decoding="async">
@@ -32,7 +36,7 @@ const project = (item, index) => `<article class="folio-page project project--${
     <div class="project-kicker"><span class="project-number">${escape(item.number)}</span><span>${escape(item.category)}</span><span class="status">${escape(item.status)}</span></div>
     <div class="project-heading"><div><p class="eyebrow">${escape(item.brand)} / ${escape(item.sector)}</p><h2 id="${escape(item.id)}-title">${escape(item.title)}</h2></div><p class="project-period">${escape(item.period)}</p></div>
     <p class="project-summary">${escape(item.summary)}</p>
-  </header>
+  </header>${item.testimonial ? `\n  ${testimonial(item.testimonial)}` : ''}
   <div class="project-layout">
     <div class="project-gallery">${item.media.map(media).join('')}</div>
     <div class="project-copy">
