@@ -41,12 +41,12 @@
       "id": "nasimas",
       "number": "01",
       "brand": "Nasima's Childcare",
-      "title": "A clearer digital front door.",
+      "title": "Building a first social presence.",
       "category": "Real-world work",
       "status": "Marketing internship",
       "period": "April 2025 - April 2026",
       "sector": "Local services / childcare",
-      "summary": "Supporting a local childcare business with parent-friendly content, practical website updates and three Facebook campaigns that delivered 5.7K paid views.",
+      "summary": "I built the first social media presence for Nasima's Childcare, opening a new route for parent enquiries and delivering 5.7K paid views through Facebook campaigns.",
       "thumbnail": "assets/images/nasimas-brand-card.webp",
       "thumbnailAlt": "Nasima's Childcare playroom, showing its welcoming real-world setting in Enfield.",
       "layout": "landscape",
@@ -62,32 +62,32 @@
           "src": "assets/images/nasimas-paid-results.webp",
           "width": 1400,
           "height": 1100,
-          "alt": "Paid social results showing 5.7K views, 3.4K combined campaign reach and GBP 38.63 total spend across three Facebook campaigns.",
-          "caption": "Meta Ad Centre results: three completed campaigns created by Meharin, October 2025 to February 2026.",
+          "alt": "Nasima's Childcare Facebook campaign summary: 5.7K paid views and 3.4K combined reported reach, which may include audience overlap.",
+          "caption": "Meta Ad Centre results from the campaigns I created for Nasima's Childcare, October 2025 to February 2026.",
           "metric": "5.7K paid views"
         }
       ],
       "sections": [
         {
-          "heading": "The brief",
-          "text": "Help a small Enfield childcare business present its services clearly to local parents. The content needed to feel reassuring, easy to understand and consistent with the information on its website."
+          "heading": "The starting point",
+          "text": "When I joined, Nasima's Childcare had a website but no social media presence and little online traction. I spotted an opportunity to help local parents discover the business beyond its website."
         },
         {
           "heading": "My contribution",
           "items": [
-            "Created and managed Facebook content and designed posts in Canva.",
-            "Ran Meta Facebook Ads Manager campaigns aimed at local parents.",
-            "Updated website HTML content and imagery through GitHub, including funded-childcare information."
+            "I took the initiative to launch and manage its Facebook page, building the social media foundation from scratch.",
+            "I created parent-friendly Canva posts and ran Facebook campaigns aimed at local families.",
+            "I updated website HTML content and imagery through GitHub, including funded-childcare information."
           ]
         },
         {
           "heading": "What this shows",
-          "text": "Practical marketing support across channels: adapting messages for social, delivering targeted campaigns on modest budgets and keeping useful website information current."
+          "text": "I can spot an unmet marketing need and follow it through: setting up a channel, creating content, reaching a local audience and keeping information consistent."
         }
       ],
       "note": {
         "label": "Results in context",
-        "text": "Three completed Facebook campaigns created by Meharin delivered 5.7K paid views and 3.4K combined reported reach on under GBP 40 total spend. Google Search Console also recorded 1.7K impressions and 55 clicks between 8 June 2025 and 30 April 2026. Meta reports reach per campaign, so the combined figure may include audience overlap."
+        "text": "My Facebook campaigns delivered 5.7K paid views and 3.4K combined reported reach. Google Search Console recorded 1.7K search impressions between June 2025 and April 2026. Combined campaign reach may include audience overlap; search impressions are not website visits."
       },
       "tools": ["Canva", "Meta Ads Manager", "HTML content", "GitHub"],
       "links": [
@@ -110,7 +110,7 @@
       "status": "Social content and live presenting",
       "period": "January 2022 - December 2023",
       "sector": "Fashion / social media",
-      "summary": "Fashion content and live presenting for a clothing brand, with work across TikTok, Instagram, Facebook and YouTube.",
+      "summary": "I contributed fashion content and live presenting across TikTok, Instagram, Facebook and YouTube.",
       "thumbnail": "assets/images/anzara-brand-card.webp",
       "thumbnailAlt": "Anzara's gold logo beside its fashion storefront and window display.",
       "layout": "portrait-pair",
@@ -139,14 +139,14 @@
       "sections": [
         {
           "heading": "The context",
-          "text": "Collection content had to make the clothing feel engaging beyond a still product image. Short-form formats and livestreams offered different ways to show the garments and connect with viewers."
+          "text": "I used short-form content and livestreams to help bring collections to life beyond still product images, showing garments and connecting with viewers."
         },
         {
           "heading": "My contribution",
           "items": [
-            "Created fashion content and short-form videos for the brand's social channels.",
-            "Hosted livestreams and presented collections to an online audience.",
-            "Worked with formats including Reels, Stories, TikToks, YouTube videos and Facebook video."
+            "I created fashion content and short videos for the brand's social channels.",
+            "I hosted livestreams and presented collections to an online audience.",
+            "I worked across Reels, Stories, TikToks, YouTube and Facebook video."
           ]
         },
         {
@@ -156,7 +156,7 @@
       ],
       "note": {
         "label": "Content in context",
-        "text": "Created with Anzara's wider team; my contribution was content creation and presenting. Public TikTok view counts checked on 9 October 2026. The figures refer to these two videos, not an average across all my work."
+        "text": "I worked with Anzara's wider team on content creation and presenting. Public TikTok view counts checked on 9 October 2026. The figures refer to these two videos, not an average across all my work."
       },
       "tools": ["CapCut", "InShot", "TikTok", "Instagram", "Facebook", "YouTube"],
       "links": [
@@ -177,7 +177,7 @@
       "title": "An idea with a natural flow.",
       "category": "Independent concept",
       "status": "Self-initiated / not commissioned",
-      "period": "Canva concept / portfolio refinement",
+      "period": "Original Canva concept",
       "sector": "Beauty / social creative",
       "summary": "A flowing-hair visual that turns a simple seasonal message into a recognisable beauty concept.",
       "thumbnail": "assets/images/flora-concept.webp",
@@ -189,7 +189,7 @@
           "width": 1024,
           "height": 1024,
           "alt": "A navy flowing-hair illustration alongside the headline 'Let your summer style flow' and the Flora logo.",
-          "caption": "An independent Canva concept, with the headline refined for this portfolio."
+          "caption": "An independent beauty concept connecting flowing hair, summer style and a simple seasonal message."
         }
       ],
       "sections": [
@@ -199,16 +199,16 @@
         },
         {
           "heading": "The idea",
-          "text": "The hair becomes a waterfall: a visual metaphor for movement and flow. A restrained navy-and-white palette keeps the silhouette and brand name easy to recognise."
+          "text": "I turned flowing hair into a waterfall: a visual metaphor for movement and flow. A restrained navy-and-white palette keeps the silhouette and brand name easy to recognise."
         },
         {
           "heading": "How I'd develop it",
-          "text": "Pair the awareness post with a service-led Story and a clear booking link. I would test the message against a treatment-led version and compare booking-link clicks, not just likes."
+          "text": "I'd pair the awareness post with a service-led Story and a clear booking link. I would test the message against a treatment-led version and compare booking-link clicks, not just likes."
         }
       ],
       "note": {
-        "label": "From concept to next step",
-        "text": "The original Canva idea is mine. This portfolio version refines the headline to 'Let your summer style flow'. The suggested rollout and measurement are proposals, not delivered campaign results."
+        "label": "Clear project status",
+        "text": "This is my self-initiated creative concept, not work commissioned, approved or published by Flora. The proposed rollout and measurement are next-step ideas, not campaign results."
       },
       "tools": ["Canva", "Concept development", "Social copy", "Visual hierarchy"],
       "links": []
@@ -246,12 +246,12 @@
         },
         {
           "heading": "How I'd develop it",
-          "text": "Extend the concept into a product-led carousel using approved collection photography, ending with a 'Shop summer dresses' call to action. I would compare product-page clicks and saves across the creative versions."
+          "text": "I'd extend the concept into a product-led carousel using approved collection photography, ending with a 'Shop summer dresses' call to action. I would compare product-page clicks and saves across the creative versions."
         }
       ],
       "note": {
         "label": "Clear project status",
-        "text": "This is a self-initiated creative exercise, not work commissioned, approved or published by Boden. The proposed extension is a next-step idea, not a campaign result."
+        "text": "This is my self-initiated creative exercise, not work commissioned, approved or published by Boden. The proposed extension is a next-step idea, not a campaign result."
       },
       "tools": ["Canva", "Visual storytelling", "Seasonal messaging", "Social copy"],
       "links": []
@@ -296,7 +296,7 @@
         },
         {
           "heading": "My contribution",
-          "text": "Created the brochure concept in Canva, combining panda illustrations, bold green-and-orange sections, explanatory copy and calls to action across two sides."
+          "text": "I created the brochure concept in Canva, combining panda illustrations, bold green-and-orange sections, explanatory copy and calls to action across two sides."
         },
         {
           "heading": "What this shows",
@@ -339,7 +339,31 @@
     ],
     "learning": {
       "title": "Additional learning",
-      "text": "Google courses via Coursera: Foundations of Digital Marketing and E-commerce; Attract and Engage Customers with Digital Marketing."
+      "text": "I completed these Google courses via Coursera.",
+      "courses": [
+        {
+          "title": "Foundations of Digital Marketing and E-commerce",
+          "grade": 90,
+          "url": "https://www.coursera.org/account/accomplishments/verify/GR7YGGBWNAEA",
+          "image": {
+            "src": "assets/images/google-foundations-certificate.webp",
+            "width": 1198,
+            "height": 928,
+            "alt": "Google course certificate awarded to Meharin Onty for Foundations of Digital Marketing and E-commerce."
+          }
+        },
+        {
+          "title": "Attract and Engage Customers with Digital Marketing",
+          "grade": 90,
+          "url": "https://www.coursera.org/account/accomplishments/verify/RQ5KPM0TG6K7",
+          "image": {
+            "src": "assets/images/google-attract-engage-certificate.webp",
+            "width": 1198,
+            "height": 928,
+            "alt": "Google course certificate awarded to Meharin Onty for Attract and Engage Customers with Digital Marketing."
+          }
+        }
+      ]
     },
     "skills": [
       {

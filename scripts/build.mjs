@@ -45,6 +45,10 @@ const project = (item, index) => `<article class="folio-page project project--${
   ${footer(index + 2)}
 </article>`;
 const education = item => `<div class="education-item"><h4>${escape(item.title)}</h4><p>${escape(item.institution)}</p><p class="education-detail">${escape(item.detail)}</p><ul>${item.highlights.map(text => `<li>${escape(text)}</li>`).join('')}</ul></div>`;
+const course = item => `<li class="course-card">
+  <img src="${escape(item.image.src)}" width="${item.image.width}" height="${item.image.height}" alt="${escape(item.image.alt)}" loading="lazy" decoding="async">
+  <div><h4>${escape(item.title)}</h4><p class="course-grade"><strong>${escape(item.grade)}%</strong> course grade</p>${external(item.url, 'View certificate', `aria-label="View certificate for ${escape(item.title)} on Coursera (opens in a new tab)"`)}</div>
+</li>`;
 const schema = {
   '@context': 'https://schema.org', '@type': 'Person',
   name: data.name, url: data.siteUrl, sameAs: [data.linkedin],
@@ -108,9 +112,10 @@ const html = `<!doctype html>
       <div class="about-heading"><div><p class="eyebrow">${escape(data.about.eyebrow)}</p><h2 id="about-title">${lines(data.about.title)}</h2></div>${flower}</div>
       <div class="about-intro"><p>${escape(data.about.intro)}</p><p>${escape(data.about.body)}</p></div>
       <div class="about-grid">
-        <div class="education"><h3 class="column-title">A marketing foundation</h3>${data.about.education.map(education).join('')}<div class="learning"><h4>${escape(data.about.learning.title)}</h4><p>${escape(data.about.learning.text)}</p></div></div>
+        <div class="education"><h3 class="column-title">A marketing foundation</h3>${data.about.education.map(education).join('')}</div>
         <div class="capabilities"><h3 class="column-title">What I can bring to a team</h3>${data.about.skills.map(group => `<section class="skill-group"><h4>${escape(group.title)}</h4><ul>${group.items.map(item => `<li>${escape(item)}</li>`).join('')}</ul></section>`).join('')}<p class="languages"><strong>Languages</strong><br>${escape(data.about.languages)}</p><p class="role-note">${escape(data.about.role)}</p></div>
       </div>
+      <section class="learning" aria-labelledby="learning-title"><div class="learning-heading"><h3 class="column-title" id="learning-title">${escape(data.about.learning.title)}</h3><p>${escape(data.about.learning.text)}</p></div><ul class="course-list">${data.about.learning.courses.map(course).join('')}</ul></section>
       <div class="contact-block" id="contact"><div><h3>${escape(data.about.contactTitle)}</h3><p>${escape(data.about.contactText)}</p></div><div class="contact-links"><a class="email-link" href="mailto:${escape(data.email)}">${escape(data.email)} <span aria-hidden="true">&#8599;</span></a>${linkedIn()}<a class="text-link screen-only" href="${escape(data.pdf)}" download>Download the portfolio PDF <span aria-hidden="true">&#8595;</span></a></div></div>
       <p class="rights-note">${escape(data.footer.disclaimer)}</p>
       ${footer(pageCount)}

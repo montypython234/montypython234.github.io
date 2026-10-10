@@ -161,9 +161,18 @@ nav a { font-size: .88rem; font-weight: 600; text-decoration: none; padding: 10p
 .education-item > p { font-size: .9rem; }
 .education-detail { color: var(--coral); font-weight: 600; }
 .education-item ul { font-size: .84rem; line-height: 1.7; margin: 10px 0 0; color: var(--muted); }
-.learning { margin-top: 24px; }
-.learning h4 { font-size: .84rem; margin-bottom: 6px; }
-.learning p { font-size: .8rem; color: var(--muted); }
+.learning { margin-top: 32px; }
+.learning-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.learning-heading > .column-title { margin: 0; padding: 0; border: 0; }
+.learning-heading > p { font-size: .85rem; color: var(--muted); }
+.course-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: 20px; list-style: none; padding: 0; margin: 16px 0 0; }
+.course-card { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: center; gap: 20px; padding: 18px; border: 1px solid var(--line); border-radius: 6px; }
+.course-card > div { min-width: 0; }
+.course-card > img { width: 100%; height: auto; border: 1px solid var(--line); }
+.course-card h4 { font-size: .88rem; line-height: 1.4; }
+.course-grade { margin-top: 9px; font-size: .8rem; color: var(--muted); }
+.course-grade strong { font-size: 1.15rem; color: var(--coral); }
+.course-card a { display: inline-flex; align-items: center; min-height: 40px; font-size: .78rem; font-weight: 600; }
 .skill-group + .skill-group { margin-top: 26px; }
 .skill-group h4 { font-size: .88rem; }
 .skill-group ul { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; list-style: none; margin: 12px 0 0; }
@@ -270,6 +279,8 @@ nav a { font-size: .88rem; font-weight: 600; text-decoration: none; padding: 10p
   .hero-socials { gap: 6px 17px; }
   .about-heading .flower { display: none; }
   .project-kicker { gap: 9px; font-size: .66rem; }
+  .course-card { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .course-card > img { max-width: 260px; justify-self: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -370,9 +381,15 @@ nav a { font-size: .88rem; font-weight: 600; text-decoration: none; padding: 10p
   .education-item > p { font-size: 9pt; }
   .education-item ul { font-size: 9pt; line-height: 1.45; margin-top: 2.5mm; }
   .education-item + .education-item { margin-top: 4mm; }
-  .learning { margin-top: 4mm; }
-  .learning h4 { font-size: 8.5pt; margin-bottom: 1.5mm; }
-  .learning p { font-size: 9pt; }
+  .learning { margin-top: 5mm; }
+  .learning-heading { gap: 2mm 4mm; padding-bottom: 2.5mm; }
+  .learning-heading > p { font-size: 8.5pt; }
+  .course-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4mm; margin-top: 3mm; }
+  .course-card { grid-template-columns: 27mm minmax(0, 1fr); gap: 3mm; padding: 3mm; border-radius: 1.5mm; }
+  .course-card h4 { font-size: 8.5pt; line-height: 1.35; }
+  .course-grade { font-size: 8pt; margin-top: 1.5mm; }
+  .course-grade strong { font-size: 11pt; }
+  .course-card a { font-size: 8pt; min-height: 0; margin-top: 1mm; }
   .skill-group h4 { font-size: 9pt; }
   .skill-group ul { gap: 1.5mm; margin-top: 3mm; }
   .skill-group li { font-size: 8pt; padding: 1.5mm 2.5mm; }

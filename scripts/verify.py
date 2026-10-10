@@ -26,7 +26,12 @@ def main():
         assert document.xref_get_key(document.pdf_catalog(), "StructTreeRoot")[0] == "xref"
         assert document.metadata["author"] == data["name"]
         text = normalized(" ".join(page.get_text() for page in document))
-        required = [data["hero"]["intro"], data["about"]["body"], data["about"]["contactText"]]
+        required = [
+            data["hero"]["intro"], data["about"]["body"], data["about"]["contactText"],
+            data["about"]["learning"]["text"],
+        ]
+        for course in data["about"]["learning"]["courses"]:
+            required.extend([course["title"], f"{course['grade']}% course grade"])
         for project in data["projects"]:
             required.extend([project["title"], project["summary"], project["note"]["text"]])
             for section in project["sections"]:
@@ -36,6 +41,21 @@ def main():
         links = [link.get("uri", "") for page in document for link in page.get_links()]
         assert not any("127.0.0.1" in link or "localhost" in link for link in links)
         assert data["linkedin"] in links
+        about_text = normalized(document[-1].get_text())
+        for course in data["about"]["learning"]["courses"]:
+            assert course["url"] in links
+            assert course["title"] in about_text
+        assert about_text.count("90% course grade") == len(data["about"]["learning"]["courses"])
+        assert not re.search(r"\bNasima's(?! Childcare)", text)
+        assert "55 clicks" not in text and "created by Meharin" not in text
+        assert "portfolio refinement" not in text and "portfolio version refines" not in text
+        expected_outline = [[1, "Meet Meharin", 1]]
+        expected_outline.extend(
+            [1, project["brand"] + " / " + project["category"], index + 2]
+            for index, project in enumerate(data["projects"])
+        )
+        expected_outline.append([1, "About me and contact", len(document)])
+        assert document.get_toc() == expected_outline
         for project in data["projects"]:
             for link in project["links"]:
                 assert link["url"] in links
@@ -62,6 +82,18 @@ def main():
                 ), "A project thumbnail is being unintentionally clipped."
                 assert page.locator("article.project").count() == len(data["projects"])
                 assert page.locator(".zoom-button").count() == image_count
+                course_cards = page.locator(".course-card")
+                assert course_cards.count() == len(data["about"]["learning"]["courses"])
+                for card, course in zip(course_cards.all(), data["about"]["learning"]["courses"]):
+                    assert card.locator("h4").inner_text() == course["title"]
+                    assert normalized(card.locator(".course-grade").inner_text()) == \
+                        f"{course['grade']}% course grade"
+                    assert card.locator("a").get_attribute("href") == course["url"]
+                    image = card.locator("img")
+                    assert image.evaluate("(i) => i.naturalWidth") == course["image"]["width"]
+                    assert image.evaluate("(i) => i.naturalHeight") == course["image"]["height"]
+                    card.locator("a").focus()
+                    assert card.locator("a").evaluate("(a) => a === document.activeElement")
                 for zoom in page.locator(".zoom-button").all():
                     zoom.click()
                     assert page.locator("dialog").evaluate("(element) => element.open")
@@ -80,6 +112,7 @@ def main():
             assert page.locator("article.project").count() == len(data["projects"])
             assert page.locator("h1").inner_text() == data["hero"]["greeting"]
             assert page.locator("a.zoom-button[href]").count() == image_count
+            assert page.locator(".course-card a[href]").count() == len(data["about"]["learning"]["courses"])
             page.close()
             for width in [1440, 768, 390, 320]:
                 page = browser.new_page(viewport={"width": width, "height": 1024})

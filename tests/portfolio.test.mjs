@@ -66,9 +66,76 @@ test("Nasima's Childcare project card uses the real setting without duplicating 
   assert.ok(project.media.every(item => item.src !== project.thumbnail));
   assert.equal(project.media[1].src, 'assets/images/nasimas-paid-results.webp');
   assert.match(project.note.text, /5\.7K paid views/);
-  assert.match(project.note.text, /under GBP 40 total spend/);
-  assert.match(project.note.text, /1\.7K impressions and 55 clicks/);
+  assert.match(project.note.text, /3\.4K combined reported reach/);
+  assert.match(project.note.text, /1\.7K search impressions/);
   assert.match(project.note.text, /audience overlap/);
+  assert.match(project.note.text, /search impressions are not website visits/);
+});
+
+test("Nasima's Childcare explains the social launch without small performance figures", () => {
+  const project = data.projects.find(item => item.id === 'nasimas');
+  const visible = [
+    project.summary, project.note.text,
+    ...project.sections.flatMap(section => section.items || [section.text]),
+    ...project.media.flatMap(item => [item.alt, item.caption, item.metric || '']),
+  ].join(' ');
+  assert.match(visible, /no social media presence/);
+  assert.match(visible, /initiative to launch and manage its Facebook page/);
+  assert.match(visible, /social media foundation from scratch/);
+  assert.match(visible, /new route for parent enquiries/);
+  assert.doesNotMatch(visible, /55 clicks|GBP|spend|followers/i);
+  for (const [, amount, suffix] of visible.matchAll(/\b(\d+(?:\.\d+)?)(K)?\b/g)) {
+    assert.ok(Number(amount) * (suffix ? 1000 : 1) > 100, `Small public figure: ${amount}${suffix || ''}`);
+  }
+});
+
+test('Flora is an original independent concept, not a portfolio revision', () => {
+  const project = data.projects.find(item => item.id === 'flora');
+  assert.equal(project.period, 'Original Canva concept');
+  assert.equal(project.category, 'Independent concept');
+  assert.match(project.status, /not commissioned/);
+  assert.match(project.note.text, /not work commissioned, approved or published by Flora/);
+  assert.match(project.note.text, /not campaign results/);
+  assert.match(project.media[0].alt, /Let your summer style flow/);
+  assert.doesNotMatch(JSON.stringify(project), /refin|portfolio version|updated|edited/i);
+});
+
+test('project narration stays personal and the childcare business uses its full name', () => {
+  for (const project of data.projects) {
+    const narration = [
+      project.summary, project.note.text,
+      ...project.sections.flatMap(section => section.items || [section.text]),
+      ...project.media.map(item => item.caption),
+    ].join(' ');
+    assert.doesNotMatch(narration, /\bMeharin\b/);
+  }
+  assert.doesNotMatch(source, /\bNasima's(?! Childcare)/);
+});
+
+test('completed Google courses have the correct grades, certificate links and local images', () => {
+  const courses = data.about.learning.courses;
+  assert.deepEqual(courses.map(({ title, grade, url }) => ({ title, grade, url })), [
+    {
+      title: 'Foundations of Digital Marketing and E-commerce',
+      grade: 90,
+      url: 'https://www.coursera.org/account/accomplishments/verify/GR7YGGBWNAEA',
+    },
+    {
+      title: 'Attract and Engage Customers with Digital Marketing',
+      grade: 90,
+      url: 'https://www.coursera.org/account/accomplishments/verify/RQ5KPM0TG6K7',
+    },
+  ]);
+  assert.equal([...html.matchAll(/class="course-card"/g)].length, courses.length);
+  assert.equal([...html.matchAll(/<strong>90%<\/strong> course grade/g)].length, courses.length);
+  for (const course of courses) {
+    assert.ok(html.includes(`href="${course.url}"`));
+    assert.ok(html.includes(`src="${course.image.src}"`));
+    assert.ok(course.image.alt.includes(course.title));
+    assert.deepEqual([course.image.width, course.image.height], [1198, 928]);
+  }
+  assert.match(data.about.learning.text, /completed these Google courses via Coursera/);
+  assert.doesNotMatch(JSON.stringify(data.about.learning), /professional certificate|specialisation/i);
 });
 
 test('canonical URLs and the Pages CNAME agree', async () => {
@@ -81,7 +148,10 @@ test('canonical URLs and the Pages CNAME agree', async () => {
 
 test('substantive portfolio content is present in the generated document', () => {
   const plain = decode(html.replace(/<br>/g, '\n').replace(/<[^>]+>/g, ' '));
-  const relevant = [data.hero.intro, data.hero.availability, data.about.body, data.about.contactText];
+  const relevant = [
+    data.hero.intro, data.hero.availability, data.about.body, data.about.contactText,
+    data.about.learning.text, ...data.about.learning.courses.map(course => course.title),
+  ];
   for (const project of data.projects) {
     relevant.push(project.title, project.summary, project.note.text);
     for (const section of project.sections) relevant.push(...(section.items || [section.text]));
