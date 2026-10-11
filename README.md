@@ -50,7 +50,7 @@ Course certificate previews are cropped only to remove the surrounding blank mar
 
 Anzara previews intentionally focus on garments rather than faces. Preserve the original video links, dates, view-count context and contribution attribution when changing these crops. The personal introduction portrait is a separate asset.
 
-DM Sans and DM Serif Display are distributed under the SIL Open Font License; the corresponding licences are in `assets\fonts`. The LinkedIn icon is the official blue `[in]` asset, used only as a link to Meharin's profile. Brand names and supplied project artwork remain the property of their respective owners. Independent concepts are not claims of commissioned work or brand endorsement.
+DM Sans and DM Serif Display are distributed under the SIL Open Font License; the corresponding licences are in `assets\fonts`. The LinkedIn icon is the official blue `[in]` asset, used only as a link to Meharin's profile. Its `linkedin-on-dark.png` contact variant preserves the original artwork and dimensions with opaque white lettering and a transparent exterior, so it needs no white CSS background in either format. Brand names and supplied project artwork remain the property of their respective owners. Independent concepts are not claims of commissioned work or brand endorsement.
 
 The case-study approach was informed by [Kansas State University's portfolio guidance](https://cdbusiness.ksu.edu/blog/2026/01/29/marketing-portfolio-that-stands-out-tips-and-examples/), [Adobe's case-study guidance](https://www.adobe.com/express/learn/blog/marketing-case-study) and [Framer's portfolio examples](https://www.framer.com/blog/marketing-portfolio-examples/). The layout and implementation are original.
 

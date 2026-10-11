@@ -86,6 +86,9 @@ def main():
                     "(images) => Promise.all(images.map(i => { i.loading = 'eager'; return i.decode(); }))"
                 )
                 assert not errors, errors
+                assert page.locator(".contact-links .social-link img").evaluate(
+                    "(image) => getComputedStyle(image).backgroundColor"
+                ) == "rgba(0, 0, 0, 0)", "The contact icon must not have a white background."
                 assert page.evaluate("document.documentElement.scrollWidth <= innerWidth")
                 assert not page.locator(".work-card-image > img").evaluate_all(
                     "(images) => images.some(i => i.clientHeight > i.parentElement.clientHeight)"
@@ -149,6 +152,9 @@ def main():
                 "(images) => Promise.all(images.map(i => { i.loading = 'eager'; return i.decode(); }))"
             )
             page.emulate_media(media="print")
+            assert page.locator(".contact-links .social-link img").evaluate(
+                "(image) => getComputedStyle(image).backgroundColor"
+            ) == "rgba(0, 0, 0, 0)", "The printed contact icon must not have a white background."
             for project in testimonial_projects:
                 article = page.locator(f"#{project['id']}")
                 figure = article.locator(".project-testimonial")

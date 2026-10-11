@@ -194,7 +194,7 @@ nav a { font-size: .88rem; font-weight: 600; text-decoration: none; padding: 10p
 .contact-links a:hover { color: #f3c8b4; }
 .contact-links .email-link { font-size: 1.03rem; width: 100%; text-align: right; overflow-wrap: anywhere; }
 .contact-links .social-link { font-size: .8rem; }
-.contact-links .social-link img { background: white; border-radius: 3px; }
+.contact-links .social-link img { border-radius: 3px; }
 .text-link { font-size: .76rem; min-height: 40px; display: inline-flex; align-items: center; }
 .rights-note { font-size: .68rem; line-height: 1.6; color: var(--muted); margin-top: 22px; max-width: 900px; }
 .site-footer { max-width: 1160px; margin: 0 auto; padding: 23px 0 30px; border-top: 1px solid var(--line); display: flex; align-items: start; gap: 30px; font-size: .65rem; color: var(--muted); }

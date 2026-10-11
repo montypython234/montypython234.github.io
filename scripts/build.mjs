@@ -11,10 +11,10 @@ const escape = value => String(value).replace(/[&<>"']/g, char => ({
 const lines = value => escape(value).replace(/\n/g, '<br>\n');
 const external = (url, label, extra = '') =>
   `<a href="${escape(url)}" target="_blank" rel="noopener noreferrer" ${extra}>${escape(label)}<span aria-hidden="true" class="link-arrow">&#8599;</span></a>`;
-const linkedIn = () => external(data.linkedin,
+const linkedIn = (icon = 'assets/icons/linkedin.png') => external(data.linkedin,
   'LinkedIn',
   'class="social-link" aria-label="Visit Meharin Onty on LinkedIn (opens in a new tab)"')
-  .replace('>LinkedIn', '><img src="assets/icons/linkedin.png" width="24" height="24" alt="">LinkedIn');
+  .replace('>LinkedIn', `><img src="${escape(icon)}" width="24" height="24" alt="">LinkedIn`);
 const flower = '<svg class="flower" viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><ellipse cx="50" cy="27" rx="12" ry="25"/><ellipse cx="50" cy="73" rx="12" ry="25"/><ellipse cx="27" cy="50" rx="25" ry="12"/><ellipse cx="73" cy="50" rx="25" ry="12"/><ellipse cx="50" cy="27" rx="12" ry="25" transform="rotate(45 50 50)"/><ellipse cx="50" cy="73" rx="12" ry="25" transform="rotate(45 50 50)"/><ellipse cx="27" cy="50" rx="25" ry="12" transform="rotate(45 50 50)"/><ellipse cx="73" cy="50" rx="25" ry="12" transform="rotate(45 50 50)"/></g><circle cx="50" cy="50" r="11" fill="var(--paper)"/></svg>';
 const tags = values => `<ul class="tags" aria-label="Skills used">${values.map(value => `<li>${escape(value)}</li>`).join('')}</ul>`;
 const footer = page => `<div class="folio-footer" aria-hidden="true"><span>${escape(data.brand)} / ${escape(data.name)}</span><span>${String(page).padStart(2, '0')} / ${String(pageCount).padStart(2, '0')}</span></div>`;
@@ -120,7 +120,7 @@ const html = `<!doctype html>
         <div class="capabilities"><h3 class="column-title">What I can bring to a team</h3>${data.about.skills.map(group => `<section class="skill-group"><h4>${escape(group.title)}</h4><ul>${group.items.map(item => `<li>${escape(item)}</li>`).join('')}</ul></section>`).join('')}<p class="languages"><strong>Languages</strong><br>${escape(data.about.languages)}</p><p class="role-note">${escape(data.about.role)}</p></div>
       </div>
       <section class="learning" aria-labelledby="learning-title"><div class="learning-heading"><h3 class="column-title" id="learning-title">${escape(data.about.learning.title)}</h3><p>${escape(data.about.learning.text)}</p></div><ul class="course-list">${data.about.learning.courses.map(course).join('')}</ul></section>
-      <div class="contact-block" id="contact"><div><h3>${escape(data.about.contactTitle)}</h3><p>${escape(data.about.contactText)}</p></div><div class="contact-links"><a class="email-link" href="mailto:${escape(data.email)}">${escape(data.email)} <span aria-hidden="true">&#8599;</span></a>${linkedIn()}<a class="text-link screen-only" href="${escape(data.pdf)}" download>Download the portfolio PDF <span aria-hidden="true">&#8595;</span></a></div></div>
+      <div class="contact-block" id="contact"><div><h3>${escape(data.about.contactTitle)}</h3><p>${escape(data.about.contactText)}</p></div><div class="contact-links"><a class="email-link" href="mailto:${escape(data.email)}">${escape(data.email)} <span aria-hidden="true">&#8599;</span></a>${linkedIn('assets/icons/linkedin-on-dark.png')}<a class="text-link screen-only" href="${escape(data.pdf)}" download>Download the portfolio PDF <span aria-hidden="true">&#8595;</span></a></div></div>
       <p class="rights-note">${escape(data.footer.disclaimer)}</p>
       ${footer(pageCount)}
     </section>
