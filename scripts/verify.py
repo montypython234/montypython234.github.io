@@ -75,7 +75,7 @@ def main():
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch(channel="msedge", headless=True)
         try:
-            for width, height in [(1440, 1000), (768, 1024), (390, 844), (320, 800)]:
+            for width, height in [(1440, 1000), (768, 1024), (600, 900), (390, 844), (320, 800)]:
                 page = browser.new_page(viewport={"width": width, "height": height})
                 errors = []
                 page.on("pageerror", lambda error: errors.append(str(error)))
@@ -93,6 +93,21 @@ def main():
                 assert not page.locator(".work-card-image > img").evaluate_all(
                     "(images) => images.some(i => i.clientHeight > i.parentElement.clientHeight)"
                 ), "A project thumbnail is being unintentionally clipped."
+                gallery = page.locator("#nasimas .project-gallery")
+                summary = gallery.locator(".project-media").filter(
+                    has=page.locator('img[src="assets/images/nasimas-paid-results.webp"]')
+                )
+                gallery_box = gallery.bounding_box()
+                summary_box = summary.bounding_box()
+                first_media_box = gallery.locator(".project-media").first.bounding_box()
+                assert abs(summary_box["width"] - gallery_box["width"]) <= 1, \
+                    f"The campaign summary must use the available gallery width ({width}px)."
+                assert summary_box["y"] >= first_media_box["y"] + first_media_box["height"] - 1, \
+                    f"The campaign summary must stack below the website sample ({width}px)."
+                summary_link = summary.get_by_role("link", name="View the campaign summary", exact=False)
+                summary_image = summary.locator("img").get_attribute("src")
+                assert summary_link.get_attribute("href") == f"{data['siteUrl']}/{summary_image}", \
+                    "The campaign summary link must open the matching full-resolution image."
                 assert page.locator("article.project").count() == len(data["projects"])
                 assert page.locator(".zoom-button").count() == image_count
                 assert page.locator(".project-testimonial").count() == len(testimonial_projects)

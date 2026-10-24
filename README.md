@@ -48,7 +48,9 @@ Reusable source derivatives and evidence files belong in the gitignored `.portfo
 
 Course certificate previews are cropped only to remove the surrounding blank margins from the owner's public Coursera certificate images. The unchanged downloads and source details stay in `.portfolio-assets\Coursera certificates\`; the site serves local WebP derivatives, not third-party embeds. The paid-social summary is generated from the retained Meta evidence by `.portfolio-assets\Nasimas paid results\render-summary.py` with the preview running.
 
-Anzara previews intentionally focus on garments rather than faces. Preserve the original video links, dates, view-count context and contribution attribution when changing these crops. The personal introduction portrait is a separate asset.
+The paid-social summary uses the available gallery width on screen and stacks below the website sample. Its shared caption links to the full-resolution image, so PDF readers can inspect the chart while the two-column print layout stays intact.
+
+Anzara previews intentionally focus on garments rather than faces. The owner-confirmed body of work exceeds 100 promotional videos created as part of the wider team; the two featured TikToks are selected examples, and the displayed view counts apply only to those two videos. Preserve the original video links, dates, view-count context and contribution attribution when changing these crops. The personal introduction portrait is a separate asset.
 
 DM Sans and DM Serif Display are distributed under the SIL Open Font License; the corresponding licences are in `assets\fonts`. The LinkedIn icon is the official blue `[in]` asset, used only as a link to Meharin's profile. Its `linkedin-on-dark.png` contact variant preserves the original artwork and dimensions with opaque white lettering and a transparent exterior, so it needs no white CSS background in either format. Brand names and supplied project artwork remain the property of their respective owners. Independent concepts are not claims of commissioned work or brand endorsement.
 

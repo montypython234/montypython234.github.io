@@ -11,7 +11,7 @@
     "eyebrow": "A marketing portfolio with a personal point of view",
     "greeting": "Hi! I'm Meharin.",
     "headline": "Thoughtful ideas.\nContent that feels human.",
-    "intro": "I'm an MSc International Marketing graduate with Distinction, bringing together hands-on UK marketing experience, fashion social content and a love of a well-considered visual idea.",
+    "intro": "I'm an MSc International Marketing graduate with Distinction. My experience includes creating social content, running Facebook campaigns and updating website content and imagery.",
     "availability": "Looking for an in-house graduate or Marketing Assistant role.",
     "portrait": "assets/images/meharin-portrait.webp",
     "portraitAlt": "Meharin smiling, seated against a warm stone background.",
@@ -70,7 +70,9 @@
           "height": 1100,
           "alt": "Nasima's Childcare Facebook campaign summary: 5.7K paid views and 3.4K combined reported reach, which may include audience overlap.",
           "caption": "Meta Ad Centre results from the campaigns I created for Nasima's Childcare, October 2025 to February 2026.",
-          "metric": "5.7K paid views"
+          "metric": "5.7K paid views",
+          "url": "https://meharinonty.co.uk/assets/images/nasimas-paid-results.webp",
+          "linkLabel": "View the campaign summary"
         }
       ],
       "sections": [
@@ -116,7 +118,7 @@
       "status": "Social content and live presenting",
       "period": "January 2022 - December 2023",
       "sector": "Fashion / social media",
-      "summary": "I contributed fashion content and live presenting across TikTok, Instagram, Facebook and YouTube.",
+      "summary": "I created more than 100 promotional videos as part of Anzara's wider team, alongside live presenting. The two TikToks below are selected examples from that work.",
       "thumbnail": "assets/images/anzara-brand-card.webp",
       "thumbnailAlt": "Anzara's gold logo beside its fashion storefront and window display.",
       "layout": "portrait-pair",

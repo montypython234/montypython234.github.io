@@ -133,7 +133,6 @@ nav a { font-size: .88rem; font-weight: 600; text-decoration: none; padding: 10p
 .project-media figcaption a { display: inline-block; padding-top: 9px; font-weight: 600; color: var(--ink); min-height: 36px; }
 .zoom-button { position: absolute; right: 21px; bottom: 21px; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: var(--paper); color: var(--ink); font-size: 1.5rem; text-decoration: none; }
 .zoom-button:hover { background: var(--ink); color: white; }
-.project--landscape .project-gallery > figure:nth-child(2) { max-width: 220px; }
 .project--landscape .project-gallery > figure:nth-child(2) .image-wrap { padding: 8px; }
 .project--portrait-pair .project-gallery { grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr)); gap: 15px; }
 .project--portrait-pair .image-wrap { padding: 8px; background: #e7dace; }
@@ -258,8 +257,6 @@ nav a { font-size: .88rem; font-weight: 600; text-decoration: none; padding: 10p
   .project-period { text-align: left; max-width: none; }
   .project-heading h2 { font-size: 2.7rem; }
   .project-layout { grid-template-columns: minmax(0, 1fr); gap: 28px; margin-top: 27px; }
-  .project--landscape .project-gallery { grid-template-columns: 1fr 120px; gap: 15px; align-items: start; }
-  .project--landscape .project-gallery > figure:nth-child(2) { max-width: 120px; }
   .project-gallery { max-width: 550px; }
   .project--portrait-pair .project-gallery { max-width: 470px; margin-inline: auto; }
   .project--concept .project-gallery { max-width: 500px; }
@@ -280,8 +277,6 @@ nav a { font-size: .88rem; font-weight: 600; text-decoration: none; padding: 10p
   .project-index { grid-template-columns: 1fr; }
   .work-card-image { height: 290px; }
   .work-card-caption h3 { font-size: 1.8rem; }
-  .project--landscape .project-gallery { grid-template-columns: 1fr; }
-  .project--landscape .project-gallery > figure:nth-child(2) { max-width: 155px; }
   .hero-socials { gap: 6px 17px; }
   .about-heading .flower { display: none; }
   .project-kicker { gap: 9px; font-size: .66rem; }
