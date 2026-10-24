@@ -35,9 +35,12 @@ def main():
             required.extend([course["title"], f"{course['grade']}% course grade"])
         for index, project in enumerate(data["projects"]):
             required.extend([project["title"], project["summary"], project["note"]["text"]])
+            project_text = normalized(document[index + 1].get_text())
+            for media in project["media"]:
+                assert normalized(media["caption"]) in project_text, \
+                    f"Missing media caption on the {project['brand']} PDF page: {media['caption']}"
             if project.get("testimonial"):
                 testimonial = project["testimonial"]
-                project_text = normalized(document[index + 1].get_text())
                 for key in ["quote", "author", "role"]:
                     assert testimonial[key] in project_text, f"Missing testimonial {key} on its project page."
                     assert text.count(testimonial[key]) == 1, f"Repeated testimonial {key} in the PDF."
@@ -103,7 +106,7 @@ def main():
                 assert abs(summary_box["width"] - gallery_box["width"]) <= 1, \
                     f"The campaign summary must use the available gallery width ({width}px)."
                 assert summary_box["y"] >= first_media_box["y"] + first_media_box["height"] - 1, \
-                    f"The campaign summary must stack below the website sample ({width}px)."
+                    f"The campaign summary must stack below the creative sample ({width}px)."
                 summary_link = summary.get_by_role("link", name="View the campaign summary", exact=False)
                 summary_image = summary.locator("img").get_attribute("src")
                 assert summary_link.get_attribute("href") == f"{data['siteUrl']}/{summary_image}", \

@@ -174,6 +174,7 @@ test('substantive portfolio content is present in the generated document', () =>
   ];
   for (const project of data.projects) {
     relevant.push(project.title, project.summary, project.note.text);
+    relevant.push(...project.media.map(media => media.caption));
     if (project.testimonial) {
       relevant.push(project.testimonial.quote, project.testimonial.author, project.testimonial.role);
     }

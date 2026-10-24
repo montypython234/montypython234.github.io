@@ -58,11 +58,11 @@
       "layout": "landscape",
       "media": [
         {
-          "src": "assets/images/nasimas-website.webp",
-          "width": 1360,
-          "height": 1000,
-          "alt": "Website content explaining funded childcare and showing the play environment.",
-          "caption": "Selected live website excerpts: useful information and a view of the play environment."
+          "src": "assets/images/nasimas-facebook-profile.webp",
+          "width": 526,
+          "height": 526,
+          "alt": "Facebook profile graphic for Nasima's Childcare in Enfield, with illustrated children and the message 'A safe space to play and grow'.",
+          "caption": "Facebook profile graphic I designed in Canva for Nasima's Childcare."
         },
         {
           "src": "assets/images/nasimas-paid-results.webp",
@@ -128,7 +128,7 @@
           "width": 1788,
           "height": 1560,
           "alt": "A face-free detail of the floral embroidery and draped fabric in Anzara's ready-saree video.",
-          "caption": "Garment detail / Ready-saree collection / TikTok / March 2023",
+          "caption": "Ready-saree / March 2023. I edited the raw footage in InShot and posted it to TikTok.",
           "metric": "542.6K views",
           "url": "https://www.tiktok.com/@anzara.official/video/7211155694119111937",
           "linkLabel": "Watch the saree video"
@@ -138,7 +138,7 @@
           "width": 1572,
           "height": 1892,
           "alt": "A face-free detail of an embellished gharara outfit and flowing blue fabric from Anzara's collection video.",
-          "caption": "Garment detail / Gharara collection / TikTok / April 2023",
+          "caption": "Gharara / April 2023. I edited the raw footage in InShot and posted it to TikTok.",
           "metric": "253.9K views",
           "url": "https://www.tiktok.com/@anzara.official/video/7220067355550846210",
           "linkLabel": "Watch the gharara video"
