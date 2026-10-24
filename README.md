@@ -50,7 +50,7 @@ Course certificate previews are cropped only to remove the surrounding blank mar
 
 The Nasima's Childcare case shows the owner's Canva Facebook profile graphic as a design sample, not a paid-ad creative or the source of the reported campaign results. Its lossless WebP preserves the supplied 526 x 526 artwork; the unchanged upload is retained locally in `.portfolio-assets\Nasimas Facebook profile\original.png`. The website contribution remains described and linked separately.
 
-The paid-social summary uses the available gallery width on screen and stacks below the profile graphic. Its shared caption links to the full-resolution image, so PDF readers can inspect the chart while the two-column print layout stays intact.
+The paid-social summary uses the available gallery width on screen and stacks below the profile graphic. Its shared caption links to the full-resolution image. Print-only rules give the profile graphic a square frame with even padding and enlarge the chart without stretching either image or adding a PDF page; screen layout is unchanged.
 
 Anzara previews intentionally focus on garments rather than faces. The owner-confirmed body of work exceeds 100 promotional videos created as part of the wider team; the two featured TikToks are selected examples, and the displayed view counts apply only to those two videos. Each caption records the owner's confirmed role on that clip: editing the raw footage in InShot and posting it to TikTok. The captions do not claim filming responsibility or extend those clip-specific tasks to all 100-plus videos. Preserve the original video links, dates, view-count context and contribution attribution when changing these crops. The personal introduction portrait is a separate asset.
 

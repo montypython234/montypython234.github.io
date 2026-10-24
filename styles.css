@@ -351,6 +351,10 @@ nav a { font-size: .88rem; font-weight: 600; text-decoration: none; padding: 10p
   .project--landscape .project-gallery > figure:first-child img { max-height: 68mm; width: 100%; object-fit: contain; }
   .project--landscape .project-gallery > figure:nth-child(2) { max-width: none; }
   .project--landscape .project-gallery > figure:nth-child(2) .image-wrap { padding: 2mm; }
+  #nasimas .project-gallery { grid-template-columns: 71mm minmax(0, 1fr); align-items: start; }
+  #nasimas .project-gallery > figure:nth-child(2) .image-wrap { width: fit-content; }
+  #nasimas .project-gallery > figure:nth-child(2) img { width: auto; max-height: 52mm; }
+  #nasimas .project-copy { margin-top: 4mm; }
   .project--portrait-pair .project-gallery { grid-template-columns: repeat(2,1fr); max-width: 118mm; gap: 6mm; margin-inline: auto; }
   .project--portrait-pair .project-media img { height: 73mm; width: 100%; object-fit: contain; }
   .project--portrait-pair .image-wrap { padding: 2mm; }

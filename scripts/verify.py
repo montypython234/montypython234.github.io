@@ -170,6 +170,18 @@ def main():
                 "(images) => Promise.all(images.map(i => { i.loading = 'eager'; return i.decode(); }))"
             )
             page.emulate_media(media="print")
+            profile = page.locator("#nasimas .project-media").first
+            frame = profile.locator(".image-wrap").bounding_box()
+            image = profile.locator("img").bounding_box()
+            assert abs(frame["width"] - frame["height"]) <= 1, "The printed profile frame must be square."
+            padding = [
+                image["x"] - frame["x"], image["y"] - frame["y"],
+                frame["x"] + frame["width"] - image["x"] - image["width"],
+                frame["y"] + frame["height"] - image["y"] - image["height"],
+            ]
+            assert max(padding) - min(padding) <= 1, "The printed profile padding must be even."
+            chart = page.locator("#nasimas .project-media").nth(1).locator(".image-wrap").bounding_box()
+            assert chart["width"] > 43 * 96 / 25.4, "The printed chart must exceed the former 43 mm width."
             assert page.locator(".contact-links .social-link img").evaluate(
                 "(image) => getComputedStyle(image).backgroundColor"
             ) == "rgba(0, 0, 0, 0)", "The printed contact icon must not have a white background."
@@ -184,6 +196,9 @@ def main():
                 layout = article.locator(".project-layout").bounding_box()
                 footer = article.locator(".folio-footer").bounding_box()
                 assert layout["y"] + layout["height"] <= footer["y"], "Project content must not overlap the footer."
+                last_content = article.locator(".project-copy > :last-child").bounding_box()
+                assert last_content["y"] + last_content["height"] < footer["y"], \
+                    "Printed content must leave clearance above the footer."
             page.close()
             for width in [1440, 768, 390, 320]:
                 page = browser.new_page(viewport={"width": width, "height": 1024})
