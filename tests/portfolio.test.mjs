@@ -84,7 +84,10 @@ test("Nasima's Childcare explains the social launch without small performance fi
   assert.match(visible, /social media foundation from scratch/);
   assert.match(visible, /new route for parent enquiries/);
   assert.doesNotMatch(visible, /55 clicks|GBP|spend|followers/i);
-  for (const [, amount, suffix] of visible.matchAll(/\b(\d+(?:\.\d+)?)(K)?\b/g)) {
+  assert.match(visible, /for under £40 in total/);
+  const figures = visible.replaceAll('under £40', '');
+  assert.doesNotMatch(figures, /£/);
+  for (const [, amount, suffix] of figures.matchAll(/\b(\d+(?:\.\d+)?)(K)?\b/g)) {
     assert.ok(Number(amount) * (suffix ? 1000 : 1) > 100, `Small public figure: ${amount}${suffix || ''}`);
   }
 });
@@ -194,7 +197,7 @@ test('hero highlights use verified, evidence-backed achievements', () => {
   assert.deepEqual(data.hero.proof, [
     { value: 'Distinction', label: 'MSc International Marketing' },
     { value: '796.5K views', label: 'Two featured Anzara TikToks' },
-    { value: '5.7K paid views', label: "Nasima's Childcare paid social" },
+    { value: '5.7K paid views', label: "Nasima's Childcare Facebook ads, under £40" },
   ]);
 });
 

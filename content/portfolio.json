@@ -27,7 +27,7 @@
       },
       {
         "value": "5.7K paid views",
-        "label": "Nasima's Childcare paid social"
+        "label": "Nasima's Childcare Facebook ads, under £40"
       }
     ]
   },
@@ -46,7 +46,7 @@
       "status": "Marketing internship",
       "period": "April 2025 - April 2026",
       "sector": "Local services / childcare",
-      "summary": "I built the first social media presence for Nasima's Childcare, opening a new route for parent enquiries and delivering 5.7K paid views through Facebook campaigns.",
+      "summary": "I built the first social media presence for Nasima's Childcare, opening a new route for parent enquiries and delivering 5.7K paid views through Facebook campaigns for under £40.",
       "testimonial": {
         "quote": "She quickly transformed our online presence...",
         "author": "Nasima Khan",
@@ -90,12 +90,12 @@
         },
         {
           "heading": "What this shows",
-          "text": "I can spot an unmet marketing need and follow it through: setting up a channel, creating content, reaching a local audience and keeping information consistent."
+          "text": "I can spot an unmet marketing need and follow it through: setting up a channel, creating content, reaching a local audience on a small budget and keeping information consistent."
         }
       ],
       "note": {
         "label": "Results in context",
-        "text": "My Facebook campaigns delivered 5.7K paid views and 3.4K combined reported reach. Google Search Console recorded 1.7K search impressions between June 2025 and April 2026. Combined campaign reach may include audience overlap; search impressions are not website visits."
+        "text": "My Facebook campaigns delivered 5.7K paid views and 3.4K combined reported reach for under £40 in total. Google Search Console recorded 1.7K search impressions between June 2025 and April 2026. Combined campaign reach may include audience overlap; search impressions are not website visits."
       },
       "tools": ["Canva", "Meta Ads Manager", "HTML content", "GitHub"],
       "links": [
@@ -154,7 +154,8 @@
           "items": [
             "I created fashion content and short videos for the brand's social channels.",
             "I hosted livestreams and presented collections to an online audience.",
-            "I worked across Reels, Stories, TikToks, YouTube and Facebook video."
+            "I worked across Reels, Stories, TikToks, YouTube and Facebook video.",
+            "I introduced the business's use of Shopify to help improve product visibility."
           ]
         },
         {
@@ -166,7 +167,7 @@
         "label": "Content in context",
         "text": "I worked with Anzara's wider team on content creation and presenting. Public TikTok view counts checked on 9 October 2026. The figures refer to these two videos, not an average across all my work."
       },
-      "tools": ["CapCut", "InShot", "TikTok", "Instagram", "Facebook", "YouTube"],
+      "tools": ["CapCut", "InShot", "Shopify", "TikTok", "Instagram", "Facebook", "YouTube"],
       "links": [
         {
           "label": "View Anzara on Instagram",
@@ -380,7 +381,7 @@
       },
       {
         "title": "Campaign support",
-        "items": ["Meta Ads Manager", "Facebook page management", "Website content updates", "Microsoft 365"]
+        "items": ["Meta Ads Manager", "Facebook page management", "Website content updates", "Shopify", "HubSpot", "Microsoft 365"]
       }
     ],
     "languages": "English, Bengali and Hindi",
